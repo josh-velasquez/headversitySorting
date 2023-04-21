@@ -2,6 +2,7 @@
 Sorting assignment for Headversity
 
 ## Frontend 
+Uses Semantic ui modules for front end design
 Should handle loading especially with high loads
 Should have a feedback option at the footer for improvements
 
