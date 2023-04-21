@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3HIsZ1ysqMvgvYHE1iNFiYQ6ZyVUF8N1tfw94rgfjAYHmaqVr7T+MzQDoCPFtaVCP5LS2NdrHnQXc18o+4p32g==",
+  "dgSpecHash": "5N9TeTRuj5uu7lmZeYnNUYzG//SmMDXuVJNwkPcvlpgnnn1/arkTKNJ5KYPihldViMEOFI7Of7EHtCfTEQOiQQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\Sorting.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Nemesis\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -29,3 +29,5 @@ C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Deb
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.pdb
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.genruntimeconfig.cache
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\ref\Sorting.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.csproj.CopyComplete

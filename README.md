@@ -1,12 +1,33 @@
 # headversitySorting
 Sorting assignment for Headversity
 
+### TODO
+Front-end changes
+- [ ] Implement sorting criteria
+- [ ] Add information on sorting functions
+- [ ] Add/Show exposed endpoints
+- [ ] Round corners of container for UI
+- [ ] Abstract requests on the front end
+- [ ] Incorporate redux thunk for propagation?
+
+Back-end changes
+- [ ] Parse through payload
+- [ ] Implement sorting algorithms here
+- [ ] Add overloads for processing objects sort
+- [ ] Abstract endpoints to a controller file
+- [ ] Remove junk on Program.cs
+- [ ] Update CORS policy to only allow certain methods (also update origin urls -- localhost:3000)
+- [ ] Sorting algorithms has statistics
+
+
+
 ## Frontend 
 Uses Semantic ui modules for front end design
 Should handle loading especially with high loads
 Should have a feedback option at the footer for improvements
 
 Sample layout:
+```yaml
 data:
 [
     {
@@ -24,6 +45,7 @@ data:
         height: 155 (cm)
     }
 ]
+```
 sort by: age
 sort order: highest -> lowest
 
@@ -35,7 +57,7 @@ sort order: highest -> lowest
 ### Available endpoints
 POST request
 - returns sorted values with the statistics of how long it took to sort (maybe what algorithm was used to sort it)
-
+```yaml
 request = {
     id: requestId,
     date: submissionDate,
@@ -47,6 +69,7 @@ request = {
         }
     ]
 }
+```
 
 
 ### Sorting functions
