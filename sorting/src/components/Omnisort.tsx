@@ -15,11 +15,6 @@ import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 
-// interface SortingPayload {
-//   id: number;
-//   objects: string;
-// }
-
 enum Keywords {
   Alphabet = "Alphabet",
   Number = "Number",
@@ -43,32 +38,30 @@ const Omnisort: React.FC = () => {
   const [customKeywords, setCustomKeyword] = useState<string[]>([]);
   const { requestApi } = useActions();
   const { data, error, loading } = useTypedSelector(
-    (state: any) => state.results
+    (state) => state.results
   );
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     requestApi(values, customKeywords);
-    if (error) {
-      setResults("Oops something went wrong 🙁...");
-    } else if (loading) {
-      setResults("Fetching sorting results...");
-    } else if (!error && !loading && data) {
-      setResults(JSON.stringify(data));
+    if (!error && !loading && data) {
+      // TODO: Destructure this to JSON object 
+      setResults(JSON.stringify(data))
     }
-
-    // axios
-    //   .post("https://localhost:7006/sorting", {
-    //     payload: values,
-    //   })
-    //   .then((response) => {
-    //     setResults(JSON.stringify(response.data.payload));
-    //   })
-    //   .catch((error) => {
-    //     setResults("Oops something went wrong 🙁...");
-    //     console.warn("ERROR: " + error);
-    //   });
   };
+
+  const onUpdateResults = (): string => {
+    if (error) {
+      return "Oops something went wrong 🙁...";
+    } else if (loading) {
+      return "Fetching sorting results...";
+    } else if (!error && !loading && data) {
+      // TODO: Destructure this to JSON object 
+      return JSON.stringify(data);
+    } else {
+      return "Your results here...";
+    }
+  }
 
   const onCopy = () => {
     navigator.clipboard.writeText(results);
@@ -149,7 +142,7 @@ const Omnisort: React.FC = () => {
           <Divider />
           <Form style={{ padding: "5px" }}>
             <TextArea
-              value={results}
+              value={onUpdateResults()}
               placeholder="Results..."
               style={{ marginBottom: "10px", backgroundColor: "#eff6e0" }}
             />

@@ -32,11 +32,12 @@ app.MapPost("/sorting", async delegate (HttpContext context)
         TestPayload responsePayload = new TestPayload();
         responsePayload.Id = 1;
         responsePayload.Date = DateTime.Now;
+        Debug.WriteLine(jsonstring);
         var result = JsonConvert.DeserializeObject<FrontEndPayload>(jsonstring);
-        string[] stringArrays = result.Payload.Split(new char[] { '[',',',']' });
+        string[] stringArrays = result!.Payload.SortValues.Split(new char[] { '[', ',', ']' });
         int[] ints = Array.ConvertAll(stringArrays, s => int.TryParse(s, out var x) ? x : -1);
         Array.Sort(ints);
-        responsePayload.Payload = "[" + string.Join(",", ints).Replace("-1,","") + "]";
+        responsePayload.Payload = "[" + string.Join(",", ints).Replace("-1,", "") + "]";
         return responsePayload;
     }
 });
@@ -65,7 +66,14 @@ app.Run();
 
 public class FrontEndPayload
 {
-    public string Payload { get; set; }
+    public InnerPayload Payload { get; set; }
+
+}
+
+public class InnerPayload
+{
+    public string SortValues { get; set; }
+    public string[] Keywords { get; set; }
 }
 
 public class TestPayload

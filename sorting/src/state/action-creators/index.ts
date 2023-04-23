@@ -17,8 +17,7 @@ export const requestApi = (sortValues: string, keywords: string[]) => {
           keywords: keywords,
         },
       });
-      const results = data.objects;
-
+      const results = data.payload;
       dispatch({
         type: ActionType.REQUEST_API_SUCCESS,
         payload: results,
