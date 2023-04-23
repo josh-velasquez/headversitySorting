@@ -1,6 +1,7 @@
 import { Container, Header, Menu, Icon } from "semantic-ui-react";
 import { InView } from "react-intersection-observer";
-import React from "react";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const menuStyle = {
   border: "none",
@@ -15,36 +16,39 @@ const fixedMenuStyle = {
   boxShadow: "0px 3px 5px rgba(0, 0, 0, 0.2)",
 };
 
-class NavBar extends React.Component {
-  state = {
-    menuFixed: false,
-    overlayFixed: false,
-  };
+const NavBar: React.FC = () => {
+  const [menuFixed, setMenuFixed] = useState<boolean>();
+  const toggleTopMenu = (inView: any) => setMenuFixed(!inView);
 
-  toggleOverlay = (inView: any) => this.setState({ overlayFixed: !inView });
-  toggleTopMenu = (inView: any) => this.setState({ menuFixed: !inView });
-  render() {
-    const { menuFixed } = this.state;
-    return (
-      <InView onChange={this.toggleTopMenu}>
-        <Menu
-          inverted
-          borderless
-          fixed={menuFixed ? "top" : undefined}
-          style={menuFixed ? fixedMenuStyle : menuStyle}
-        >
-          <Container text>
-            <Menu.Item>
-              <Icon name="sort alphabet down" />
-            </Menu.Item>
-            <Menu.Item>
-              <Header inverted as="h1"> Sorting</Header>
-            </Menu.Item>
-          </Container>
-        </Menu>
-      </InView>
-    );
-  }
-}
+  let navigate = useNavigate();
 
+  return (
+    <InView onChange={toggleTopMenu}>
+      <Menu
+        inverted
+        borderless
+        fixed={menuFixed ? "top" : undefined}
+        style={menuFixed ? fixedMenuStyle : menuStyle}
+      >
+        <Container text>
+          <Menu.Item>
+            <Icon name="sort alphabet down" />
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/" onClick={() => navigate("/")}>
+              <Header inverted as="h1">
+                Omnisort
+              </Header>
+            </Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to="/docs" onClick={() => navigate("/docs")}>
+              Docs
+            </Link>
+          </Menu.Item>
+        </Container>
+      </Menu>
+    </InView>
+  );
+};
 export default NavBar;

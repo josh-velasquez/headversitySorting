@@ -1,8 +1,15 @@
 # headversitySorting
 Sorting assignment for Headversity
 
+Supports multiple sorting 
+Ex: 
+Group -> Sort
+Flatten -> Sort
+Sort within group
+
 ### TODO
 Front-end changes
+- [ ] Implement history for navigation
 - [ ] Implement sorting criteria
 - [ ] Add information on sorting functions
 - [ ] Add/Show exposed endpoints
@@ -25,6 +32,8 @@ Back-end changes
 Uses Semantic ui modules for front end design
 Should handle loading especially with high loads
 Should have a feedback option at the footer for improvements
+
+The front-end is designed to be simple to demonstrate a clear interaction design with the users. 
 
 Sample layout:
 ```yaml
