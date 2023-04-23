@@ -8,6 +8,7 @@ import {
   Dropdown,
   DropdownItemProps,
   Segment,
+  DropdownProps,
 } from "semantic-ui-react";
 import axios from "axios";
 import * as _ from "lodash";
@@ -39,6 +40,7 @@ enum Keywords {
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
   const [results, setResults] = useState("");
+  const [customKeywords, setCustomKeyword] = useState<string[]>([]);
   const { requestApi } = useActions();
   const { data, error, loading } = useTypedSelector(
     (state: any) => state.results
@@ -46,7 +48,7 @@ const Omnisort: React.FC = () => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    requestApi(values);
+    requestApi(values, customKeywords);
     if (error) {
       setResults("Oops something went wrong 🙁...");
     } else if (loading) {
@@ -70,6 +72,21 @@ const Omnisort: React.FC = () => {
 
   const onCopy = () => {
     navigator.clipboard.writeText(results);
+  };
+
+  const onDropdownSelect = (
+    _: React.SyntheticEvent<HTMLElement, Event>,
+    data: DropdownProps
+  ) => {
+    if (!data.value) {
+      return;
+    }
+    if (Array.isArray(data.value)) {
+      const selectedItems: string[] = data.value.map((_, j) => {
+        return keywords[j];
+      });
+      setCustomKeyword(selectedItems);
+    }
   };
 
   const keywords: string[] = Object.values(Keywords);
@@ -122,6 +139,7 @@ const Omnisort: React.FC = () => {
               search
               placeholder="Keywords"
               options={keywordOptions}
+              onChange={onDropdownSelect}
               style={{ marginBottom: "5px", backgroundColor: "#eff6e0" }}
             />
             <Button floated="right" positive>

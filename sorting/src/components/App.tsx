@@ -23,14 +23,4 @@ const App = () => {
     </Provider>
   );
 };
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       // 875
-
-//     );
-//   }
-// }
-
 export default App;
