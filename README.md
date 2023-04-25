@@ -1,6 +1,9 @@
 # headversitySorting
 Sorting assignment for Headversity
 
+NOTES: 
+Security - Authentication can be considered but was not included because it was not required in this type of application. If we do add some sort of login, then this can be implemented.
+
 Supports multiple sorting 
 Ex: 
 Group -> Sort

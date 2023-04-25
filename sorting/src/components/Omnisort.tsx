@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import {
   TextArea,
   Container,
@@ -10,12 +10,12 @@ import {
   Segment,
   DropdownProps,
   Grid,
-  Icon,
 } from "semantic-ui-react";
 import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import FileInput from "./FileInput";
+import Intro from "./Intro";
 
 enum Keywords {
   Alphabet = "Alphabet",
@@ -40,6 +40,15 @@ const Omnisort: React.FC = () => {
   const [customKeywords, setCustomKeyword] = useState<string[]>([]);
   const { requestApi } = useActions();
   const { data, error, loading } = useTypedSelector((state) => state.results);
+
+  const [file, setFile] = useState<File>();
+
+  const onUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      setFile(files[0]);
+    }
+  };
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -95,26 +104,11 @@ const Omnisort: React.FC = () => {
 
   return (
     <Container>
-      <Segment
-        textAlign="center"
-        raised
-        inverted
-        clearing
-        className="segment-container"
-      >
-        <h3>Lorem ipsum dolor sit amet!</h3>
-        <Divider />
-        <span>
-          Lorem ipsum dolor sit amet. Ea omnis consequatur aut exercitationem
-          quisquam qui voluptates obcaecati et quaerat nemo non sunt quasi aut
-          illo assumenda et animi nemo. Ea molestiae amet aut rerum fugiat ut
-          nobis aspernatur sit ipsam doloremque.
-        </span>
-      </Segment>
+      <Intro />
       <Segment raised clearing className="segment-container" inverted>
-        <Container>
-          <Form onSubmit={onSubmit} style={{ padding: "5px" }}>
-            <Grid columns={2} relaxed="very" stackable>
+        <Form onSubmit={onSubmit} style={{ padding: "5px" }}>
+          <Grid relaxed="very">
+            <Grid.Row columns={2}>
               <Grid.Column>
                 <TextArea
                   value={values}
@@ -122,7 +116,21 @@ const Omnisort: React.FC = () => {
                   placeholder="Enter your data here..."
                   style={{ marginBottom: "10px", backgroundColor: "#eff6e0" }}
                 />
-                {/* <Input placeholder="Keyword to sort by..." /> */}
+              </Grid.Column>
+              <Grid.Row>
+                <Divider inverted vertical>
+                  Or
+                </Divider>
+              </Grid.Row>
+              <Grid.Column
+                verticalAlign="middle"
+                style={{ textAlign: "Center" }}
+              >
+                <FileInput onUploadFile={() => onUploadFile} file={file} />
+              </Grid.Column>
+            </Grid.Row>
+            <Grid.Row columns={2} relaxed="very">
+              <Grid.Column>
                 <Dropdown
                   button
                   className="icon"
@@ -135,35 +143,29 @@ const Omnisort: React.FC = () => {
                   placeholder="Keywords"
                   options={keywordOptions}
                   onChange={onDropdownSelect}
-                  style={{ marginBottom: "5px", backgroundColor: "#eff6e0" }}
+                  style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
                 />
+                {/* <Input placeholder="Keyword to sort by..." /> */}
               </Grid.Column>
-              <Grid.Column
-                verticalAlign="middle"
-                style={{ textAlign: "Center" }}
-              >
-                <FileInput />
+              <Grid.Column>
+                <Button floated="right" positive>
+                  Sort Me!
+                </Button>
               </Grid.Column>
-            </Grid>
-            <Button floated="right" positive>
-              Sort Me!
-            </Button>
-            <Divider inverted vertical>
-              Or
-            </Divider>
-          </Form>
-          <Divider />
-          <Form style={{ padding: "5px" }}>
-            <TextArea
-              value={onUpdateResults()}
-              placeholder="Results..."
-              style={{ marginBottom: "10px", backgroundColor: "#eff6e0" }}
-            />
-            <Button floated="right" color="blue" onClick={onCopy}>
-              Copy Results
-            </Button>
-          </Form>
-        </Container>
+            </Grid.Row>
+          </Grid>
+        </Form>
+        <Divider />
+        <Form>
+          <TextArea
+            value={onUpdateResults()}
+            placeholder="Results..."
+            style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
+          />
+          <Button floated="right" color="blue" onClick={onCopy}>
+            Copy Results
+          </Button>
+        </Form>
       </Segment>
     </Container>
   );

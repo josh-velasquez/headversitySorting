@@ -3,6 +3,7 @@ using System.Diagnostics;
 using System.Text;
 using Newtonsoft.Json;
 using Microsoft.VisualBasic;
+using Sorting.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,9 @@ builder.Services.AddCors(options =>
 
 // Add services to the container.
 //builder.Services.AddRazorPages();
+
+// register logging
+builder.Services.AddSingleton<ILogging, Logging>();
 
 var app = builder.Build();
 
@@ -53,13 +57,15 @@ app.MapPost("/sorting", async delegate (HttpContext context)
 
 //app.UseHttpsRedirection();
 //app.UseStaticFiles();
-//app.UseCors(CORSPOLICY);
 app.UseCors(CORSPOLICY);
-//app.UseRouting();
+app.UseRouting();
 
 //app.UseAuthorization();
 
 //app.MapRazorPages();
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{Id?}");
 
 app.Run();
 

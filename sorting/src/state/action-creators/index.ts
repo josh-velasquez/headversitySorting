@@ -12,10 +12,8 @@ export const requestApi = (sortValues: string, keywords: string[]) => {
     // TODO: Move URL to constant file !!
     try {
       const { data } = await axios.post("https://localhost:7006/sorting", {
-        payload: {
-          sortValues: sortValues,
-          keywords: keywords,
-        },
+        sortValues: sortValues,
+        keywords: keywords,
       });
       const results = data.payload;
       dispatch({

@@ -1,6 +1,5 @@
 // import Header from './Header'
 import Omnisort from "./Omnisort";
-import React from "react";
 import NavBar from "./NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Documentation from "./Documentation";
@@ -11,7 +10,7 @@ import { store } from "../state";
 const App = () => {
   return (
     <Provider store={store}>
-      <div style={{ backgroundColor: "#284b63", height: 1500 }}>
+      <div style={{ backgroundColor: "#1d3557", height: 1500 }}>
         <BrowserRouter>
           <NavBar />
           <Routes>
