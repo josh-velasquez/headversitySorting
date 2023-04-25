@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useRef, MutableRefObject } from "react";
 import {
   TextArea,
   Container,
@@ -10,6 +10,7 @@ import {
   Segment,
   DropdownProps,
   Grid,
+  Input,
 } from "semantic-ui-react";
 import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
@@ -36,11 +37,11 @@ enum Keywords {
 
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
-  const [results, setResults] = useState("");
-  const [customKeywords, setCustomKeyword] = useState<string[]>([]);
+  // const [results, setResults] = useState("");
+  const [sortOrder, setSortOrder] = useState<string[]>([]);
+  const [sortKeyword, setSortKeyword] = useState("");
   const { requestApi } = useActions();
   const { data, error, loading } = useTypedSelector((state) => state.results);
-
   const [file, setFile] = useState<File>();
 
   const onUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
@@ -52,11 +53,14 @@ const Omnisort: React.FC = () => {
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    requestApi(values, customKeywords);
-    if (!error && !loading && data) {
-      // TODO: Destructure this to JSON object
-      setResults(JSON.stringify(data));
-    }
+    console.warn("Values: " + values);
+    console.warn("Keyword: " + sortKeyword);
+    console.warn("Sort Order: " + sortOrder);
+    requestApi(values, sortKeyword ?? "", sortOrder);
+    // if (!error && !loading && data) {
+    //   // TODO: Destructure this to JSON object
+    //   setResults(JSON.stringify(data));
+    // }
   };
 
   const onUpdateResults = (): string => {
@@ -73,7 +77,13 @@ const Omnisort: React.FC = () => {
   };
 
   const onCopy = () => {
-    navigator.clipboard.writeText(results);
+    navigator.clipboard.writeText(JSON.stringify(data));
+  };
+
+  const onExport = () => {};
+
+  const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
+    setSortKeyword(event.target.value);
   };
 
   const onDropdownSelect = (
@@ -84,15 +94,17 @@ const Omnisort: React.FC = () => {
       return;
     }
     if (Array.isArray(data.value)) {
-      const selectedItems: string[] = data.value.map((_, j) => {
-        return keywords[j];
+      const selectedItems: string[] = data.value.map((i, _) => {
+        if (typeof i === "number") {
+          return keywords[i];
+        }
+        return keywords[0];
       });
-      setCustomKeyword(selectedItems);
+      setSortOrder(selectedItems);
     }
   };
 
   const keywords: string[] = Object.values(Keywords);
-
   const keywordOptions: DropdownItemProps[] = _.map(
     keywords,
     (keyword: string, index: number) => ({
@@ -145,7 +157,12 @@ const Omnisort: React.FC = () => {
                   onChange={onDropdownSelect}
                   style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
                 />
-                {/* <Input placeholder="Keyword to sort by..." /> */}
+                {sortOrder.some((order) => order === "Custom keyword") && (
+                  <Input
+                    placeholder="Custom keyword..."
+                    onChange={onCustomKeyword}
+                  />
+                )}
               </Grid.Column>
               <Grid.Column>
                 <Button floated="right" positive>
@@ -162,6 +179,9 @@ const Omnisort: React.FC = () => {
             placeholder="Results..."
             style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
           />
+          <Button floated="right" color="blue" onClick={onExport}>
+            Download Results
+          </Button>
           <Button floated="right" color="blue" onClick={onCopy}>
             Copy Results
           </Button>

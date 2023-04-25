@@ -1,8 +1,15 @@
-﻿namespace Sorting.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Sorting.Models
 {
     public class SortValues
     {
-        public string SortStrings { get; set; }
-        public string[] Keywords { get; set; }
+        [Required]
+        public string? SortStrings { get; set; }
+
+        public string? SortKeyword { get; set; }
+        public string[]? SortOrder { get; set; }
+
+        public IFormFile? FormFile { get; set; }
     }
 }

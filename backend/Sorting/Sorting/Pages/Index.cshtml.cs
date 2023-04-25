@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Sorting.Pages
 {
@@ -14,7 +13,6 @@ namespace Sorting.Pages
 
         public void OnGet()
         {
-
         }
     }
 }

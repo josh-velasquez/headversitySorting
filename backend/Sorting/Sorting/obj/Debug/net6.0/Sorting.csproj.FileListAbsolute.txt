@@ -31,3 +31,13 @@ C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Deb
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\ref\Sorting.dll
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.csproj.CopyComplete
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\bin\Debug\net6.0\Serilog.Sinks.Debug.dll

@@ -3,7 +3,12 @@ import { Dispatch } from "redux";
 import { ActionType } from "../action-types";
 import { Action } from "../actions";
 
-export const requestApi = (sortValues: string, keywords: string[]) => {
+export const requestApi = (
+  sortStrings: string,
+  sortKeyword?: string,
+  sortOrder?: string[],
+  file?: File
+) => {
   return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionType.REQUEST_API,
@@ -11,9 +16,11 @@ export const requestApi = (sortValues: string, keywords: string[]) => {
 
     // TODO: Move URL to constant file !!
     try {
-      const { data } = await axios.post("https://localhost:7006/sorting", {
-        sortValues: sortValues,
-        keywords: keywords,
+      const { data } = await axios.post("https://localhost:7006/api/omnisort", {
+        sortStrings: sortStrings,
+        sortKeyword: sortKeyword,
+        sortOrder: sortOrder,
+        file: file
       });
       const results = data.payload;
       dispatch({

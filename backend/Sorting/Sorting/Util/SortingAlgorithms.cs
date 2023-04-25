@@ -2,25 +2,27 @@
 {
     public static class SortingAlgorithms
     {
-        public static int[] NumberSort(string[] values)
+        public static void NumberSort(int[] values)
         {
-            int[] intValues = new int[values.Length];
-            Array.Sort(intValues);
-            return intValues;
+            Array.Sort(values);
         }
-        
-        public static string[] AlphabetSort(string[] values) {
+
+        public static string[] AlphabetSort(int[] values)
+        {
             string[] strValues = new string[values.Length];
             Array.Sort(values);
             return strValues;
         }
 
-        private static Object[] ConvertObject(string[] values)
+        public static int[] ConvertObject(string values)
         {
-            return null;
+            string[] strVal = values.Split(new char[] { ',', '[', ']' }).Where(x => !string.IsNullOrEmpty(x)).ToArray();
+            int[] ints = Array.ConvertAll(strVal, int.Parse);
+            return ints;
         }
 
         #region QuickSort
+
         public static int[] QuickSort(int[] values)
         {
             QuickSortHelper(values, 0, values.Length - 1);
@@ -40,7 +42,7 @@
 
             int i = (low - 1);
 
-            for(int j = low; j <= high; j++)
+            for (int j = low; j <= high; j++)
             {
                 if (arr[j] < pivot)
                 {
@@ -54,18 +56,15 @@
 
         private static void QuickSortHelper(int[] arr, int low, int high)
         {
-               if (low < high)
+            if (low < high)
             {
                 int partitionIndex = Partition(arr, low, high);
 
-
                 QuickSortHelper(arr, low, partitionIndex - 1);
                 QuickSortHelper(arr, partitionIndex + 1, high);
-
             }
         }
-# endregion
 
-        
+        #endregion QuickSort
     }
 }

@@ -6,8 +6,8 @@
         public DateTime Date { get; set; }
         public string[]? SortingOptions { get; set; }
         public SortingValue[]? SortingObjects { get; set; }
-   
     }
+
     public class SortingValue : IComparable<SortingValue>
     {
         public uint Id { get; set; }

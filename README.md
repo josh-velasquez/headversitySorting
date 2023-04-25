@@ -30,7 +30,6 @@ Back-end changes
 - [ ] Sorting algorithms has statistics
 
 
-
 ## Frontend 
 Uses Semantic ui modules for front end design
 Should handle loading especially with high loads
@@ -104,3 +103,7 @@ Colour sorting -- group colours together?
 Sort by height
 Sort by weight
 Group together (for common values?)
+
+### Logging
+The backend has a custom logging for the purpose of tracking requests that might have failed in the process. This allows for easy debugging.
+Uses Serilog.ASPnet for logging
