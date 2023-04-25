@@ -9,11 +9,13 @@ import {
   DropdownItemProps,
   Segment,
   DropdownProps,
+  Grid,
+  Icon,
 } from "semantic-ui-react";
-import axios from "axios";
 import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
+import FileInput from "./FileInput";
 
 enum Keywords {
   Alphabet = "Alphabet",
@@ -37,16 +39,14 @@ const Omnisort: React.FC = () => {
   const [results, setResults] = useState("");
   const [customKeywords, setCustomKeyword] = useState<string[]>([]);
   const { requestApi } = useActions();
-  const { data, error, loading } = useTypedSelector(
-    (state) => state.results
-  );
+  const { data, error, loading } = useTypedSelector((state) => state.results);
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     requestApi(values, customKeywords);
     if (!error && !loading && data) {
-      // TODO: Destructure this to JSON object 
-      setResults(JSON.stringify(data))
+      // TODO: Destructure this to JSON object
+      setResults(JSON.stringify(data));
     }
   };
 
@@ -56,12 +56,12 @@ const Omnisort: React.FC = () => {
     } else if (loading) {
       return "Fetching sorting results...";
     } else if (!error && !loading && data) {
-      // TODO: Destructure this to JSON object 
+      // TODO: Destructure this to JSON object
       return JSON.stringify(data);
     } else {
       return "Your results here...";
     }
-  }
+  };
 
   const onCopy = () => {
     navigator.clipboard.writeText(results);
@@ -114,30 +114,43 @@ const Omnisort: React.FC = () => {
       <Segment raised clearing className="segment-container" inverted>
         <Container>
           <Form onSubmit={onSubmit} style={{ padding: "5px" }}>
-            <TextArea
-              value={values}
-              onChange={(e) => setValues(e.target.value)}
-              placeholder="Enter your data here..."
-              style={{ marginBottom: "10px", backgroundColor: "#eff6e0" }}
-            />
-            {/* <Input placeholder="Keyword to sort by..." /> */}
-            <Dropdown
-              button
-              className="icon"
-              floating
-              multiple
-              selection
-              labeled
-              icon="key"
-              search
-              placeholder="Keywords"
-              options={keywordOptions}
-              onChange={onDropdownSelect}
-              style={{ marginBottom: "5px", backgroundColor: "#eff6e0" }}
-            />
+            <Grid columns={2} relaxed="very" stackable>
+              <Grid.Column>
+                <TextArea
+                  value={values}
+                  onChange={(e) => setValues(e.target.value)}
+                  placeholder="Enter your data here..."
+                  style={{ marginBottom: "10px", backgroundColor: "#eff6e0" }}
+                />
+                {/* <Input placeholder="Keyword to sort by..." /> */}
+                <Dropdown
+                  button
+                  className="icon"
+                  floating
+                  multiple
+                  selection
+                  labeled
+                  icon="key"
+                  search
+                  placeholder="Keywords"
+                  options={keywordOptions}
+                  onChange={onDropdownSelect}
+                  style={{ marginBottom: "5px", backgroundColor: "#eff6e0" }}
+                />
+              </Grid.Column>
+              <Grid.Column
+                verticalAlign="middle"
+                style={{ textAlign: "Center" }}
+              >
+                <FileInput />
+              </Grid.Column>
+            </Grid>
             <Button floated="right" positive>
               Sort Me!
             </Button>
+            <Divider inverted vertical>
+              Or
+            </Divider>
           </Form>
           <Divider />
           <Form style={{ padding: "5px" }}>
