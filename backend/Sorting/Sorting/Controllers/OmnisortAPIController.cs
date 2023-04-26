@@ -8,13 +8,6 @@ namespace Sorting.Controllers
     [ApiController]
     public class OmnisortAPIController : ControllerBase
     {
-        //[HttpGet]
-        //public ActionResult<TotalSortedResults> GetTotalSortedResults()
-        //{
-        //    _logger.LogInformation("Getting total sorted requests");
-        //    return new TotalSortedResults();
-        //}
-
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

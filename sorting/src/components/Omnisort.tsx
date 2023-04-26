@@ -20,47 +20,43 @@ import Intro from "./Intro";
 
 enum Keywords {
   Alphabet = "Alphabet",
+  CustomKeyword = "Custom keyword",
   Number = "Number",
   Grouping = "Grouping",
-  CustomKeyword = "Custom keyword",
-  Test1 = "test1",
-  Test2 = "test2",
-  Test3 = "test3",
-  Test4 = "test4",
-  LongTest1 = "long test 1",
-  LongTest2 = "long test 2",
-  LongTest3 = "long test 3",
-  LongTest4 = "long test 4",
-  LongTest5 = "long test 5",
-  LongTest6 = "long test 6",
 }
 
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
-  // const [results, setResults] = useState("");
   const [sortOrder, setSortOrder] = useState<string[]>([]);
   const [sortKeyword, setSortKeyword] = useState("");
   const { requestApi } = useActions();
+  const {requestApiFileUpload} = useActions();
   const { data, error, loading } = useTypedSelector((state) => state.results);
   const [file, setFile] = useState<File>();
 
   const onUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
+    console.warn("HERE")
     if (files) {
       setFile(files[0]);
     }
   };
 
+  // TODO: Allow the user to remove the file!
+
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.warn("Values: " + values);
-    console.warn("Keyword: " + sortKeyword);
-    console.warn("Sort Order: " + sortOrder);
-    requestApi(values, sortKeyword ?? "", sortOrder);
-    // if (!error && !loading && data) {
-    //   // TODO: Destructure this to JSON object
-    //   setResults(JSON.stringify(data));
-    // }
+    if (file !== undefined) {
+      const formData = new FormData();
+      formData.append("file", file ?? "");
+      console.warn("FILE HERE");
+      // requestApiFileUpload(formData, sortKeyword ?? "", sortOrder)
+    } else {
+      console.warn("NO FILE")
+      // requestApi(values, sortKeyword ?? "", sortOrder);
+    }
+    
+    
   };
 
   const onUpdateResults = (): string => {
@@ -80,7 +76,9 @@ const Omnisort: React.FC = () => {
     navigator.clipboard.writeText(JSON.stringify(data));
   };
 
-  const onExport = () => {};
+  const onExport = () => {
+
+  };
 
   const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
     setSortKeyword(event.target.value);
