@@ -18,14 +18,14 @@ Front-end changes
 - [ ] Add/Show exposed endpoints
 - [ ] Round corners of container for UI
 - [ ] Abstract requests on the front end
-- [ ] Incorporate redux thunk for propagation?
+- [X] Incorporate redux thunk for propagation?
 
 Back-end changes
 - [ ] Parse through payload
 - [ ] Implement sorting algorithms here
 - [ ] Add overloads for processing objects sort
 - [ ] Abstract endpoints to a controller file
-- [ ] Remove junk on Program.cs
+- [X] Remove junk on Program.cs
 - [ ] Update CORS policy to only allow certain methods (also update origin urls -- localhost:3000)
 - [ ] Sorting algorithms has statistics
 

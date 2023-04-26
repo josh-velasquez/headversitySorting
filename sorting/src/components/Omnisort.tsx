@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useRef, MutableRefObject } from "react";
+import React, { useState, ChangeEvent } from "react";
 import {
   TextArea,
   Container,
@@ -11,6 +11,7 @@ import {
   DropdownProps,
   Grid,
   Input,
+  Transition,
 } from "semantic-ui-react";
 import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
@@ -25,18 +26,19 @@ enum Keywords {
   Grouping = "Grouping",
 }
 
+// TODO: Update icon for browser tab
+
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
   const [sortOrder, setSortOrder] = useState<string[]>([]);
   const [sortKeyword, setSortKeyword] = useState("");
-  const { requestApi } = useActions();
-  const {requestApiFileUpload} = useActions();
-  const { data, error, loading } = useTypedSelector((state) => state.results);
   const [file, setFile] = useState<File>();
+  const { requestApi } = useActions();
+  const { requestApiFileUpload } = useActions();
+  const { data, error, loading } = useTypedSelector((state) => state.results);
 
   const onUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
-    console.warn("HERE")
     if (files) {
       setFile(files[0]);
     }
@@ -49,14 +51,10 @@ const Omnisort: React.FC = () => {
     if (file !== undefined) {
       const formData = new FormData();
       formData.append("file", file ?? "");
-      console.warn("FILE HERE");
-      // requestApiFileUpload(formData, sortKeyword ?? "", sortOrder)
+      requestApiFileUpload(formData, sortKeyword ?? "", sortOrder);
     } else {
-      console.warn("NO FILE")
-      // requestApi(values, sortKeyword ?? "", sortOrder);
+      requestApi(values, sortKeyword ?? "", sortOrder);
     }
-    
-    
   };
 
   const onUpdateResults = (): string => {
@@ -66,6 +64,7 @@ const Omnisort: React.FC = () => {
       return "Fetching sorting results...";
     } else if (!error && !loading && data) {
       // TODO: Destructure this to JSON object
+      // TODO: if its a file then show a download link for this
       return JSON.stringify(data);
     } else {
       return "Your results here...";
@@ -76,8 +75,8 @@ const Omnisort: React.FC = () => {
     navigator.clipboard.writeText(JSON.stringify(data));
   };
 
-  const onExport = () => {
-
+  const onDownloadResults = () => {
+    console.warn("Download file");
   };
 
   const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
@@ -114,7 +113,10 @@ const Omnisort: React.FC = () => {
 
   return (
     <Container>
+      <Transition animation='scale' duration={500}>
       <Intro />
+      </Transition>
+      
       <Segment raised clearing className="segment-container" inverted>
         <Form onSubmit={onSubmit} style={{ padding: "5px" }}>
           <Grid relaxed="very">
@@ -149,7 +151,6 @@ const Omnisort: React.FC = () => {
                   selection
                   labeled
                   icon="key"
-                  search
                   placeholder="Keywords"
                   options={keywordOptions}
                   onChange={onDropdownSelect}
@@ -177,7 +178,7 @@ const Omnisort: React.FC = () => {
             placeholder="Results..."
             style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
           />
-          <Button floated="right" color="blue" onClick={onExport}>
+          <Button floated="right" color="blue" onClick={onDownloadResults}>
             Download Results
           </Button>
           <Button floated="right" color="blue" onClick={onCopy}>

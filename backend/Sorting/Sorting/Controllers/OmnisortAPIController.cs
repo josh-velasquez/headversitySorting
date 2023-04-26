@@ -40,5 +40,19 @@ namespace Sorting.Controllers
 
             return new SortedValues() { Id = 2, Date = DateTime.Now, Payload = result };
         }
+
+        [HttpPost("/file")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public ActionResult<SortedValuesFile> SortValues([FromBody] SortValuesFile toSortValuesFile) {
+            if (!ModelState.IsValid) {
+                return BadRequest(ModelState);
+            }
+            if (toSortValuesFile == null) {
+                return BadRequest(toSortValuesFile);
+            }
+
+            return new SortedValuesFile();
+        }
     }
 }

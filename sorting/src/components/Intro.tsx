@@ -9,13 +9,11 @@ const Intro: React.FC = () => {
       clearing
       className="segment-container"
     >
-      <h3>Lorem ipsum dolor sit amet!</h3>
+      <h3>Sorting made easy</h3>
       <Divider />
       <span>
-        Lorem ipsum dolor sit amet. Ea omnis consequatur aut exercitationem
-        quisquam qui voluptates obcaecati et quaerat nemo non sunt quasi aut
-        illo assumenda et animi nemo. Ea molestiae amet aut rerum fugiat ut
-        nobis aspernatur sit ipsam doloremque.
+        <i>Omnisort</i> provides the simplest, most practical and inclusive
+        digital experiences in sorting.
       </span>
     </Segment>
   );
