@@ -38,7 +38,7 @@ export const requestApi = (
 };
 
 export const requestApiFileUpload = (
-  file: FormData,
+  formFile: FormData,
   sortKeyword?: string,
   sortOrder?: string[]
 ) => {
@@ -50,7 +50,7 @@ export const requestApiFileUpload = (
       const { data } = await axios.post(
         `${config.serverBaseUrl}/api/omnisort/file`,
         {
-          file: file,
+          formFile: formFile,
           sortKeyword: sortKeyword,
           sortOrder: sortOrder,
         }

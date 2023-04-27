@@ -11,7 +11,7 @@ namespace Sorting.Models
     }
 
     public class SortValuesFile {
-        [Required]
+        //[Required]
         public IFormFile FormFile { get; set; }
         public string? SortKeyword { get; set; }
         public string? SortOrder { get; set ;}

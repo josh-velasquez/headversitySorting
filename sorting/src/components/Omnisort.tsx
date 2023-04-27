@@ -11,7 +11,7 @@ import {
   DropdownProps,
   Grid,
   Input,
-  Transition,
+  Icon,
 } from "semantic-ui-react";
 import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
@@ -32,17 +32,10 @@ const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
   const [sortOrder, setSortOrder] = useState<string[]>([]);
   const [sortKeyword, setSortKeyword] = useState("");
-  const [file, setFile] = useState<File>();
   const { requestApi } = useActions();
   const { requestApiFileUpload } = useActions();
   const { data, error, loading } = useTypedSelector((state) => state.results);
-
-  const onUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
-    const files = event.target.files;
-    if (files) {
-      setFile(files[0]);
-    }
-  };
+  const [file, setFile] = useState<File>();
 
   // TODO: Allow the user to remove the file!
 
@@ -55,6 +48,18 @@ const Omnisort: React.FC = () => {
     } else {
       requestApi(values, sortKeyword ?? "", sortOrder);
     }
+  };
+
+  const onUploadFile = (event: ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      setFile(files[0]);
+    }
+  };
+
+  const onResetFile = () => {
+    
+    setFile(undefined);
   };
 
   const onUpdateResults = (): string => {
@@ -113,10 +118,7 @@ const Omnisort: React.FC = () => {
 
   return (
     <Container>
-      <Transition animation='scale' duration={500}>
       <Intro />
-      </Transition>
-      
       <Segment raised clearing className="segment-container" inverted>
         <Form onSubmit={onSubmit} style={{ padding: "5px" }}>
           <Grid relaxed="very">
@@ -138,7 +140,11 @@ const Omnisort: React.FC = () => {
                 verticalAlign="middle"
                 style={{ textAlign: "Center" }}
               >
-                <FileInput onUploadFile={() => onUploadFile} file={file} />
+                <FileInput
+                  onUploadFile={onUploadFile}
+                  onResetFile={onResetFile}
+                  file={file}
+                />
               </Grid.Column>
             </Grid.Row>
             <Grid.Row columns={2} relaxed="very">
