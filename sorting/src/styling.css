@@ -1,3 +1,8 @@
+html,
+body > div {
+  height: 100%;
+}
+
 .segment-container {
   background-color: #457b9d !important;
 }

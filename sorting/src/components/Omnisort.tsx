@@ -18,6 +18,7 @@ import { useActions } from "../hooks/useActions";
 import { useTypedSelector } from "../hooks/useTypedSelector";
 import FileInput from "./FileInput";
 import Intro from "./Intro";
+import Results from "./Results";
 
 enum Keywords {
   Alphabet = "Alphabet",
@@ -26,25 +27,28 @@ enum Keywords {
   Grouping = "Grouping",
 }
 
-// TODO: Update icon for browser tab
-
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
   const [sortOrder, setSortOrder] = useState<string[]>([]);
   const [sortKeyword, setSortKeyword] = useState("");
+  const [file, setFile] = useState<File>();
+  const { data, error, loading } = useTypedSelector((state) => state.results);
   const { requestApi } = useActions();
   const { requestApiFileUpload } = useActions();
-  const { data, error, loading } = useTypedSelector((state) => state.results);
-  const [file, setFile] = useState<File>();
-
-  // TODO: Allow the user to remove the file!
+  const keywords: string[] = Object.values(Keywords);
+  const keywordOptions: DropdownItemProps[] = _.map(
+    keywords,
+    (keyword: string, index: number) => ({
+      key: index,
+      text: keyword,
+      value: index,
+    })
+  );
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (file !== undefined) {
-      const formData = new FormData();
-      formData.append("file", file ?? "");
-      requestApiFileUpload(formData, sortKeyword ?? "", sortOrder);
+      requestApiFileUpload(file, sortKeyword ?? "", sortOrder);
     } else {
       requestApi(values, sortKeyword ?? "", sortOrder);
     }
@@ -58,7 +62,6 @@ const Omnisort: React.FC = () => {
   };
 
   const onResetFile = () => {
-    
     setFile(undefined);
   };
 
@@ -105,16 +108,6 @@ const Omnisort: React.FC = () => {
       setSortOrder(selectedItems);
     }
   };
-
-  const keywords: string[] = Object.values(Keywords);
-  const keywordOptions: DropdownItemProps[] = _.map(
-    keywords,
-    (keyword: string, index: number) => ({
-      key: index,
-      text: keyword,
-      value: index,
-    })
-  );
 
   return (
     <Container>
@@ -178,19 +171,11 @@ const Omnisort: React.FC = () => {
           </Grid>
         </Form>
         <Divider />
-        <Form>
-          <TextArea
-            value={onUpdateResults()}
-            placeholder="Results..."
-            style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
-          />
-          <Button floated="right" color="blue" onClick={onDownloadResults}>
-            Download Results
-          </Button>
-          <Button floated="right" color="blue" onClick={onCopy}>
-            Copy Results
-          </Button>
-        </Form>
+        <Results
+          onUpdateResults={onUpdateResults}
+          onDownloadResults={onDownloadResults}
+          onCopy={onCopy}
+        />
       </Segment>
     </Container>
   );

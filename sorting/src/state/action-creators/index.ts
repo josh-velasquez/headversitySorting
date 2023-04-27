@@ -16,7 +16,7 @@ export const requestApi = (
 
     try {
       const { data } = await axios.post(
-        `${config.serverBaseUrl}/api/omnisort/`,
+        `${config.serverBaseUrl}/api/sort/`,
         {
           sortStrings: sortStrings,
           sortKeyword: sortKeyword,
@@ -38,7 +38,7 @@ export const requestApi = (
 };
 
 export const requestApiFileUpload = (
-  formFile: FormData,
+  file: File,
   sortKeyword?: string,
   sortOrder?: string[]
 ) => {
@@ -47,13 +47,13 @@ export const requestApiFileUpload = (
       type: ActionType.REQUEST_API,
     });
     try {
+      const formData = new FormData();
+      formData.append("formFile", file);
+      formData.append("sortKeyword", sortKeyword ?? "");
+      formData.append("sortOrder", JSON.stringify(sortOrder));
       const { data } = await axios.post(
-        `${config.serverBaseUrl}/api/omnisort/file`,
-        {
-          formFile: formFile,
-          sortKeyword: sortKeyword,
-          sortOrder: sortOrder,
-        }
+        `${config.serverBaseUrl}/api/sort/file`,
+        formData
       );
       const results = data.payload;
       dispatch({

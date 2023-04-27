@@ -30,14 +30,16 @@ const FileInput: React.FC<FileInformation> = ({
           <Button.Content hidden>Upload file</Button.Content>
         </Button>
         <input type="file" id="file" hidden onChange={onUploadFile} />
-        <Button as="div" labelPosition="left">
-          <Label style={{ width: "auto" }} pointing="right" as="a" basic>
-            {file ? file.name : "File name..."}
-          </Label>
-          <Button type="button" icon negative onClick={onResetFile} compact>
-            <Icon name="remove" />
+        <Container textAlign="right">
+          <Button as="div" labelPosition="left">
+            <Label style={{ width: "auto" }} pointing="right" as="a" basic>
+              {file ? file.name : "File name..."}
+            </Label>
+            <Button type="button" icon negative onClick={onResetFile} compact>
+              <Icon name="remove" />
+            </Button>
           </Button>
-        </Button>
+        </Container>
       </Form.Field>
     </Container>
   );
