@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using Sorting.Models;
-using Sorting.Util;
 using System.Diagnostics;
-using System.Text.Json;
 
 namespace Sorting.Controllers
 {
@@ -11,6 +9,42 @@ namespace Sorting.Controllers
     [ApiController]
     public class OmnisortAPIController : ControllerBase
     {
+
+        private void SortObjects(SortValues sortValues)
+        {
+            string sortStrings = sortValues.SortStrings;
+            string sortKeyword = sortValues.SortKeyword ?? string.Empty;
+            SortType sortType = Enum.Parse<SortType>(sortValues.SortType ?? string.Empty);
+            switch (sortType)
+            {
+                case SortType.Alphabet:
+                    // alphabet
+                    Debug.WriteLine("Alphabet");
+                    break;
+                case SortType.Number:
+                    // another
+                    Debug.WriteLine("Number");
+                    break;
+                case SortType.Grouping:
+                    // grouping
+                    Debug.WriteLine("Grouping");
+                    break;
+                case SortType.CustomKeyword:
+                    JArray sortObjects = JArray.Parse(sortStrings);
+                    // sort here
+                    foreach (var item in sortObjects)
+                    {
+                        Debug.WriteLine(item);
+                        dynamic sortObject = JObject.Parse(item.ToString());
+                        string id = sortObject[sortKeyword];
+                        Debug.WriteLine(id);
+                    }
+                    break;
+                default:
+                    return;
+
+            }
+        }
 
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
@@ -26,20 +60,15 @@ namespace Sorting.Controllers
             {
                 return BadRequest(toSortValues);
             }
-
-            JArray sortObjects = JArray.Parse(toSortValues.SortStrings);
-            foreach (var item in sortObjects)
+            try
             {
-                dynamic sortObject = JObject.Parse(item.ToString());
-                string id = sortObject[toSortValues.SortKeyword];
-                Debug.WriteLine(id);
+                SortObjects(toSortValues);
             }
-
-            // Make sure to implement an async functionality
-            //int[] intArray = SortingAlgorithms.ConvertObject(toSortValues.SortStrings);
-            //SortingAlgorithms.NumberSort(intArray);
-
-            //string result = "[" + string.Join(",", intArray) + "]";
+            // TODO: fix sort type typing
+            catch (Exception ex)
+            {
+                return BadRequest(toSortValues);
+            }
 
             return new SortedValues() { Id = 2, Date = DateTime.Now, Payload = "Test" };
         }
@@ -57,7 +86,7 @@ namespace Sorting.Controllers
 
             Debug.WriteLine("FILE: " + toSortValuesFile.FormFile.FileName);
             Debug.WriteLine("SortKeyword: " + toSortValuesFile.SortKeyword);
-            Debug.WriteLine("SortOrder: " + toSortValuesFile.SortOrder);
+            Debug.WriteLine("SortOrder: " + toSortValuesFile.SortType);
 
             return new SortedValuesFile();
         }

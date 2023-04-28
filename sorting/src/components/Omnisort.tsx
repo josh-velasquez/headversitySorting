@@ -11,7 +11,6 @@ import {
   DropdownProps,
   Grid,
   Input,
-  Icon,
 } from "semantic-ui-react";
 import * as _ from "lodash";
 import { useActions } from "../hooks/useActions";
@@ -22,14 +21,14 @@ import Results from "./Results";
 
 enum Keywords {
   Alphabet = "Alphabet",
-  CustomKeyword = "Custom keyword",
+  CustomKeyword = "Custom Keyword",
   Number = "Number",
   Grouping = "Grouping",
 }
 
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
-  const [sortOrder, setSortOrder] = useState<string[]>([]);
+  const [sortType, setSortType] = useState<string>("Number");
   const [sortKeyword, setSortKeyword] = useState("");
   const [file, setFile] = useState<File>();
   const { data, error, loading } = useTypedSelector((state) => state.results);
@@ -48,9 +47,9 @@ const Omnisort: React.FC = () => {
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (file !== undefined) {
-      requestApiFileUpload(file, sortKeyword ?? "", sortOrder);
+      requestApiFileUpload(file, sortKeyword ?? "", sortType);
     } else {
-      requestApi(values, sortKeyword ?? "", sortOrder);
+      requestApi(values, sortKeyword ?? "", sortType);
     }
   };
 
@@ -88,6 +87,7 @@ const Omnisort: React.FC = () => {
   };
 
   const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
+    // TODO: FIX CUSTOM KEYWORD
     setSortKeyword(event.target.value);
   };
 
@@ -98,14 +98,8 @@ const Omnisort: React.FC = () => {
     if (!data.value) {
       return;
     }
-    if (Array.isArray(data.value)) {
-      const selectedItems: string[] = data.value.map((i, _) => {
-        if (typeof i === "number") {
-          return keywords[i];
-        }
-        return keywords[0];
-      });
-      setSortOrder(selectedItems);
+    if (typeof data.value === "number") {
+      setSortType(keywords[data.value]);
     }
   };
 
@@ -146,16 +140,15 @@ const Omnisort: React.FC = () => {
                   button
                   className="icon"
                   floating
-                  multiple
                   selection
                   labeled
                   icon="key"
-                  placeholder="Keywords"
+                  placeholder="Sort by..."
                   options={keywordOptions}
                   onChange={onDropdownSelect}
                   style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
                 />
-                {sortOrder.some((order) => order === "Custom keyword") && (
+                {sortType === "Custom Keyword" && (
                   <Input
                     placeholder="Custom keyword..."
                     onChange={onCustomKeyword}

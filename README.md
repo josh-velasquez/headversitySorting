@@ -42,18 +42,18 @@ Sample layout:
 data:
 [
     {
-        id: 0
-        name: John Doe,
-        age: 20,
-        weight: 175 (lbs),
-        height: 188 (cm)
+        "id": 0,
+        "name": "John Doe",
+        "age": 20,
+        "weight": "175 (lbs)",
+        "height": "188 (cm)"
     },
     {
-        id: 1,
-        name: Jane Smith,
-        age: 22,
-        weight: 120 (lbs),
-        height: 155 (cm)
+        "id": 1,
+        "name": "Jane Smith",
+        "age": 22,
+        "weight": "120 (lbs)",
+        "height": "155 (cm)"
     }
 ]
 ```

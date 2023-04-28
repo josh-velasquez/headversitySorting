@@ -7,12 +7,12 @@ namespace Sorting.Models
         //[Required]
         public string SortStrings { get; set; }
         public string? SortKeyword { get; set; }
-        public string[]? SortOrder { get; set; }
+        public string? SortType { get; set; }
     }
 
     public class SortValuesFile {
-        public IFormFile FormFile { get; set; }
+        public IFormFile? FormFile { get; set; }
         public string? SortKeyword { get; set; }
-        public string? SortOrder { get; set ;}
+        public string? SortType { get; set ;}
     }
 }
