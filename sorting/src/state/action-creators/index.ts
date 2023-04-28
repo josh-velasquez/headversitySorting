@@ -13,12 +13,16 @@ export const requestApi = (
     dispatch({
       type: ActionType.REQUEST_API,
     });
+    let jsonObject = JSON.stringify(sortStrings);
+    console.warn(jsonObject.replace(/\s\s+/g, "")) // close just remove '\n'
+
+    //\n{\nid: 0\nname: John Doe,\nage: 20,\nweight: 175 (lbs),\nheight: 188 (cm)\n},\n{\nid: 1,\nname: Jane Smith,\nage: 22,\nweight: 120 (lbs),\nheight: 155 (cm)\n}\n]"
 
     try {
       const { data } = await axios.post(
         `${config.serverBaseUrl}/api/sort/`,
         {
-          sortStrings: sortStrings,
+          sortStrings: JSON.stringify(sortStrings).replace("\\n", "").trim(),
           sortKeyword: sortKeyword,
           sortOrder: sortOrder,
         }

@@ -4,7 +4,7 @@ namespace Sorting.Models
 {
     public class SortValues
     {
-        [Required]
+        //[Required]
         public string SortStrings { get; set; }
         public string? SortKeyword { get; set; }
         public string[]? SortOrder { get; set; }

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using Sorting.Models;
 using Sorting.Util;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace Sorting.Controllers
 {
@@ -9,6 +11,7 @@ namespace Sorting.Controllers
     [ApiController]
     public class OmnisortAPIController : ControllerBase
     {
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -24,13 +27,21 @@ namespace Sorting.Controllers
                 return BadRequest(toSortValues);
             }
 
+            JArray sortObjects = JArray.Parse(toSortValues.SortStrings);
+            foreach (var item in sortObjects)
+            {
+                dynamic sortObject = JObject.Parse(item.ToString());
+                string id = sortObject[toSortValues.SortKeyword];
+                Debug.WriteLine(id);
+            }
+
             // Make sure to implement an async functionality
-            int[] intArray = SortingAlgorithms.ConvertObject(toSortValues.SortStrings);
-            SortingAlgorithms.NumberSort(intArray);
+            //int[] intArray = SortingAlgorithms.ConvertObject(toSortValues.SortStrings);
+            //SortingAlgorithms.NumberSort(intArray);
 
-            string result = "[" + string.Join(",", intArray) + "]";
+            //string result = "[" + string.Join(",", intArray) + "]";
 
-            return new SortedValues() { Id = 2, Date = DateTime.Now, Payload = result };
+            return new SortedValues() { Id = 2, Date = DateTime.Now, Payload = "Test" };
         }
 
         [HttpPost("file")]
