@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{F44852B3-FA2A-44E1-855A-0F5FB4B2FAF3}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Sorting PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sorting/Controllers/OmnisortAPIController.cs">
+    <Files>
+      <File FileName="Sorting/Controllers/OmnisortAPIController.cs" Line="46" Column="32" />
+      <File FileName="Sorting/Models/SortedValues.cs" Line="3" Column="18" NotebookId="1" />
+      <File FileName="Sorting/Models/SortType.cs" Line="5" Column="17" NotebookId="1" />
+      <File FileName="Sorting/Util/SortingAlgorithms.cs" Line="17" Column="50" NotebookId="1" />
+      <File FileName="Sorting/Util/Converters.cs" Line="29" Column="14" NotebookId="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Sorting" expanded="True">
+            <Node name="Sorting" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="OmnisortAPIController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Util" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

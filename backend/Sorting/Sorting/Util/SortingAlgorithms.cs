@@ -1,24 +1,22 @@
-﻿namespace Sorting.Util
+﻿using System.Diagnostics;
+
+namespace Sorting.Util
 {
     public static class SortingAlgorithms
     {
         public static void NumberSort(int[] values)
         {
-            Array.Sort(values);
+            Array.Sort<int>(values);
         }
 
-        public static string[] AlphabetSort(int[] values)
+        public static void StringSort(string[] values)
         {
-            string[] strValues = new string[values.Length];
-            Array.Sort(values);
-            return strValues;
+            Array.Sort<string>(values);
         }
 
-        public static int[] ConvertObject(string values)
+        public static IGrouping<string, string>[] GroupSort(string[] values)
         {
-            string[] strVal = values.Split(new char[] { ',', '[', ']' }).Where(x => !string.IsNullOrEmpty(x)).ToArray();
-            int[] ints = Array.ConvertAll(strVal, int.Parse);
-            return ints;
+            return values.GroupBy(x => x).ToArray();
         }
 
         #region QuickSort

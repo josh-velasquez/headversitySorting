@@ -19,6 +19,7 @@ Front-end changes
 - [ ] Round corners of container for UI
 - [ ] Abstract requests on the front end
 - [X] Incorporate redux thunk for propagation?
+- [X] Sort in descending order
 
 Back-end changes
 - [ ] Parse through payload

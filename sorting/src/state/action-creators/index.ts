@@ -13,9 +13,6 @@ export const requestApi = (
     dispatch({
       type: ActionType.REQUEST_API,
     });
-
-    console.warn("C: " + sortType)
-
     try {
       const { data } = await axios.post(`${config.serverBaseUrl}/api/sort/`, {
         sortStrings: sortStrings,

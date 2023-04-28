@@ -20,15 +20,15 @@ import Intro from "./Intro";
 import Results from "./Results";
 
 enum Keywords {
-  Alphabet = "Alphabet",
-  CustomKeyword = "Custom Keyword",
   Number = "Number",
+  Alphabet = "Alphabet",
   Grouping = "Grouping",
+  CustomKeyword = "Custom Keyword",
 }
 
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
-  const [sortType, setSortType] = useState<string>("Number");
+  const [sortType, setSortType] = useState<string>(Keywords.Number);
   const [sortKeyword, setSortKeyword] = useState("");
   const [file, setFile] = useState<File>();
   const { data, error, loading } = useTypedSelector((state) => state.results);
@@ -43,6 +43,8 @@ const Omnisort: React.FC = () => {
       value: index,
     })
   );
+
+  // TODO: Auto detect the type of the array to sort easier
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -72,14 +74,14 @@ const Omnisort: React.FC = () => {
     } else if (!error && !loading && data) {
       // TODO: Destructure this to JSON object
       // TODO: if its a file then show a download link for this
-      return JSON.stringify(data);
+      return JSON.stringify(data).replace(/['"]+/g, "");
     } else {
       return "Your results here...";
     }
   };
 
   const onCopy = () => {
-    navigator.clipboard.writeText(JSON.stringify(data));
+    navigator.clipboard.writeText(JSON.stringify(data).replace(/['"]+/g, ""));
   };
 
   const onDownloadResults = () => {
@@ -87,7 +89,7 @@ const Omnisort: React.FC = () => {
   };
 
   const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
-    // TODO: FIX CUSTOM KEYWORD
+    // TODO: FIX CUSTOM KEYWORD STYLING
     setSortKeyword(event.target.value);
   };
 
@@ -98,7 +100,7 @@ const Omnisort: React.FC = () => {
     if (!data.value) {
       return;
     }
-    if (typeof data.value === "number") {
+    if (typeof data.value === 'number') {
       setSortType(keywords[data.value]);
     }
   };
@@ -143,7 +145,7 @@ const Omnisort: React.FC = () => {
                   selection
                   labeled
                   icon="key"
-                  placeholder="Sort by..."
+                  defaultValue={0}
                   options={keywordOptions}
                   onChange={onDropdownSelect}
                   style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
