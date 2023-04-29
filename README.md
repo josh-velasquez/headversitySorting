@@ -1,6 +1,8 @@
 # headversitySorting
 Sorting assignment for Headversity
 
+This sorting projects leverages the power of LINQ to sort objects. With LINQ, sorting by number, alphabet, grouping, and custom keyword sorting is made possible.
+
 NOTES: 
 Security - Authentication can be considered but was not included because it was not required in this type of application. If we do add some sort of login, then this can be implemented.
 

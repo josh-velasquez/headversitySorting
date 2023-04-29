@@ -1,23 +1,60 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json.Linq;
+using System;
 
 namespace Sorting.Util
 {
     public static class SortingAlgorithms
     {
-        public static void NumberSort(int[] values)
+        private readonly static char[] delimeters = new char[] { ',', '[', ']' };
+
+        public static string[] AlphabetSort(string values)
         {
-            Array.Sort<int>(values);
+            return values
+                .Split(delimeters)
+                .Select(x => x.Trim())
+                .Where(x => !string.IsNullOrEmpty(x))
+                .OrderBy(x => x)
+                .ToArray();
         }
 
-        public static void StringSort(string[] values)
+        public static IGrouping<string, string>[] GroupStringSort(string values)
         {
-            Array.Sort<string>(values);
+            var strVal = values
+                .Split(delimeters)
+                .Select(x => x.Trim())
+                .Where(x => !string.IsNullOrEmpty(x))
+                .OrderBy(x => x)
+                .GroupBy(x => x)
+                .ToArray();
+            return strVal;
         }
 
-        public static IGrouping<string, string>[] GroupSort(string[] values)
+        public static string[] NumberSortAscending(string values)
         {
-            return values.GroupBy(x => x).ToArray();
+            return values
+                .Split(delimeters)
+                .Select(x => x.Trim())
+                .Where(x => !string.IsNullOrEmpty(x))
+                .OrderBy(x => int.Parse(x))
+                .ToArray();
         }
+
+        public static string[] NumberSortDescending(string values)
+        {
+            return values
+                .Split(delimeters)
+                .Select(x => x.Trim())
+                .Where(x => !string.IsNullOrEmpty(x))
+                .OrderByDescending(x => int.Parse(x))
+                .ToArray();
+        }
+
+        public static JToken[] ObjectSort(JArray values, string sortKeyword)
+        {
+            return  new JArray(values.OrderBy(obj => (string)obj[sortKeyword])).ToArray();
+        }
+
+
 
         #region QuickSort
 

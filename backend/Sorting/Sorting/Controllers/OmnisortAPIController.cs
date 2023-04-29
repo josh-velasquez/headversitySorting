@@ -10,7 +10,6 @@ namespace Sorting.Controllers
     [ApiController]
     public class OmnisortAPIController : ControllerBase
     {
-
         private SortedValues SortObjects(SortValues sortValues)
         {
             string sortStrings = sortValues.SortStrings.Trim();
@@ -26,38 +25,48 @@ namespace Sorting.Controllers
             switch (sortType)
             {
                 case SortType.Alphabet:
-                    string[] alphabetVals = Converters.ConvertObjectToStringArray(sortStrings);
-                    SortingAlgorithms.StringSort(alphabetVals);
+                    Debug.WriteLine("Alphabet Sort");
+                    string[] alphabetVals = SortingAlgorithms.AlphabetSort(sortStrings);
                     string alphabetResults = Converters.ConvertToString(alphabetVals);
                     result.Payload = alphabetResults;
                     return result;
+
                 case SortType.Number:
-                    int[] vals = Converters.ConvertObjectToIntArray(sortStrings);
-                    SortingAlgorithms.NumberSort(vals);
-                    string numberResults = Converters.ConvertToString(vals);
+                    Debug.WriteLine("Number Sort");
+                    string[] numberVals = SortingAlgorithms.NumberSortAscending(sortStrings);
+                    string numberResults = Converters.ConvertToString(numberVals);
                     result.Payload = numberResults;
                     return result;
+
                 case SortType.Grouping:
-                    // grouping
-                    string[] groupVals = Converters.ConvertObjectToStringArray(sortStrings);
-                    IGrouping<string, string>[] test = SortingAlgorithms.GroupSort(groupVals);
-                    string groupingResults = Converters.ConvertToString(test);
+                    Debug.WriteLine("Grouping Sort");
+                    IGrouping<string, string>[] groupVals = SortingAlgorithms.GroupStringSort(sortStrings);
+                    string groupingResults = Converters.ConvertToString(groupVals);
                     result.Payload = groupingResults;
                     return result;
-                case SortType.CustomKeyword:
-                    JArray sortObjects = JArray.Parse(sortStrings);
-                    // sort here
-                    foreach (var item in sortObjects)
-                    {
-                        Debug.WriteLine(item);
-                        dynamic sortObject = JObject.Parse(item.ToString());
-                        string id = sortObject[sortKeyword];
-                        Debug.WriteLine(id);
-                    }
-                    break;
-                default:
-                    return new SortedValues() { Id = 1, Date=  DateTime.Now, Payload = "123"};
 
+                case SortType.CustomKeyword:
+                    Debug.WriteLine("Custom Sort");
+
+                    //// sort here
+                    //foreach (var item in sortObjects)
+                    //{
+                    //    Debug.WriteLine(item);
+                    //    dynamic sortObject = JObject.Parse(item.ToString());
+                    //    string id = sortObject[sortKeyword];
+                    //    Debug.WriteLine(id);
+                    //}
+                    //break;
+                    // TODO: Fix custom objects
+                    JArray sortObjects = JArray.Parse(sortStrings);
+                    JToken[] customResult = SortingAlgorithms.ObjectSort(sortObjects, sortKeyword);
+                    string[] res = Converters.ConvertObjectToStringArray(customResult);
+                    string test = Converters.ConvertToString(res);
+                    result.Payload = test;
+                    return result;
+
+                default:
+                    return new SortedValues() { Id = 1, Date = DateTime.Now, Payload = "123" };
             }
             return new SortedValues() { Id = 1, Date = DateTime.Now, Payload = "123" };
         }
@@ -85,18 +94,19 @@ namespace Sorting.Controllers
             {
                 return BadRequest(toSortValues);
             }
-
-            return new SortedValues() { Id = 2, Date = DateTime.Now, Payload = "Test" };
         }
 
         [HttpPost("file")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<SortedValuesFile> SortValuesFile([FromForm] SortValuesFile toSortValuesFile) {
-            if (!ModelState.IsValid) {
+        public ActionResult<SortedValuesFile> SortValuesFile([FromForm] SortValuesFile toSortValuesFile)
+        {
+            if (!ModelState.IsValid)
+            {
                 return BadRequest(ModelState);
             }
-            if (toSortValuesFile == null) {
+            if (toSortValuesFile == null)
+            {
                 return BadRequest(toSortValuesFile);
             }
 

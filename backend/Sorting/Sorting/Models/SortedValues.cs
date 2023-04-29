@@ -7,9 +7,10 @@
         public string? Payload { get; set; }
     }
 
-    public class SortedValuesFile {
-        public uint Id { get; set ;}
-        public DateTime Date { get; set ;}
-        public IFormFile Payload {get; set; }
+    public class SortedValuesFile
+    {
+        public uint Id { get; set; }
+        public DateTime Date { get; set; }
+        public IFormFile Payload { get; set; }
     }
 }

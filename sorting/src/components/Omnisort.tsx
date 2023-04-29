@@ -68,7 +68,7 @@ const Omnisort: React.FC = () => {
 
   const onUpdateResults = (): string => {
     if (error) {
-      return "Oops something went wrong 🙁...";
+      return "Oops something went wrong 🙁...: ";
     } else if (loading) {
       return "Fetching sorting results...";
     } else if (!error && !loading && data) {
@@ -85,6 +85,7 @@ const Omnisort: React.FC = () => {
   };
 
   const onDownloadResults = () => {
+    // TODO: enable this if a file is ready to download
     console.warn("Download file");
   };
 
@@ -97,10 +98,11 @@ const Omnisort: React.FC = () => {
     _: React.SyntheticEvent<HTMLElement, Event>,
     data: DropdownProps
   ) => {
-    if (!data.value) {
+    if (data.value === null) {
       return;
     }
-    if (typeof data.value === 'number') {
+    if (typeof data.value === "number") {
+      console.warn(keywords[data.value]);
       setSortType(keywords[data.value]);
     }
   };
@@ -143,6 +145,7 @@ const Omnisort: React.FC = () => {
                   className="icon"
                   floating
                   selection
+                  selectOnBlur={true}
                   labeled
                   icon="key"
                   defaultValue={0}

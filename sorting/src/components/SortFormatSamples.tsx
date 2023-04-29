@@ -8,13 +8,13 @@ class SortFormatSamples extends React.Component {
         <Grid.Column width={6}>
           <Segment style={{ backgroundColor: "#eff6e0" }} textAlign="left">
             <Segment secondary>
-              ['red','blue','green','red','red','green']
+              [red,blue,red,black,green,blue,yellow,blue]
             </Segment>
             <Segment secondary>
               [[8,4,19,3],[19,18,[2,0,1]],[[6,2],9,9,1]]
             </Segment>
             <Segment secondary>[😃,🤪,🥸,😍,😭]</Segment>
-            <Segment secondary>[''b','d','a','K','r'']</Segment>
+            <Segment secondary>[b,d,a,K,r]</Segment>
             <Segment secondary>[5,3,10,7,12,56]</Segment>
             <Segment secondary>
               <pre>
@@ -54,7 +54,7 @@ class SortFormatSamples extends React.Component {
           <Segment style={{ backgroundColor: "#eff6e0" }}>
             <Segment secondary>
               <Container>
-                Sort by group
+                Sort by Group
                 <Icon className="arrow right" />
               </Container>
             </Segment>
@@ -93,7 +93,7 @@ class SortFormatSamples extends React.Component {
         <Grid.Column width={6}>
           <Segment style={{ backgroundColor: "#eff6e0" }} textAlign="left">
             <Segment secondary>
-              [['red','red','red'],'blue',['green','green]]
+              [[black],[blue,blue,blue],[green],[red,red],[yellow]]
             </Segment>
             <Segment secondary>
               [[3,4,8,19],[18,19,[0,1,2]],[[2,6],1,9,9]]
