@@ -7,6 +7,9 @@ namespace Sorting.Models
         [Required]
         public string SortStrings { get; set; }
 
+        [Required]
+        public string SortDirection { get; set; }
+
         public string? SortKeyword { get; set; }
         public string? SortType { get; set; }
     }
@@ -15,6 +18,10 @@ namespace Sorting.Models
     {
         [Required]
         public IFormFile FormFile { get; set; }
+
+        [Required]
+        public string SortDirection { get; set; }
+
         public string? SortKeyword { get; set; }
         public string? SortType { get; set; }
     }

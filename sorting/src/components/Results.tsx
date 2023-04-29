@@ -14,6 +14,7 @@ const Results: React.FC<ResultsPayload> = ({
   return (
     <Form>
       <TextArea
+        rows={20}
         value={onUpdateResults()}
         placeholder="Results..."
         style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}

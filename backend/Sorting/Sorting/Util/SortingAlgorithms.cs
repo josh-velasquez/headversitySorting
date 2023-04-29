@@ -1,60 +1,96 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
+using Sorting.Models;
 
 namespace Sorting.Util
 {
     public static class SortingAlgorithms
     {
-        private readonly static char[] delimeters = new char[] { ',', '[', ']' };
+        private static readonly char[] delimeters = new char[] { ',', '[', ']' };
 
-        public static string[] AlphabetSort(string values)
+        public static string[] AlphabetSort(string values, SortDirection sortDirection)
         {
-            return values
+            IEnumerable<string> results = values
                 .Split(delimeters)
                 .Select(x => x.Trim())
-                .Where(x => !string.IsNullOrEmpty(x))
-                .OrderBy(x => x)
-                .ToArray();
+                .Where(x => !string.IsNullOrEmpty(x));
+            switch (sortDirection)
+            {
+                case SortDirection.Ascending:
+                    results = results.OrderBy(x => x);
+                    break;
+
+                case SortDirection.Descending:
+                    results = results.OrderByDescending(x => x);
+                    break;
+
+                default:
+                    results = results.OrderBy(x => x);
+                    break;
+            }
+            return results.ToArray();
         }
 
-        public static IGrouping<string, string>[] GroupStringSort(string values)
+        public static IGrouping<string, string>[] GroupStringSort(string values, SortDirection sortDirection)
         {
-            var strVal = values
+            IEnumerable<string> results = values
                 .Split(delimeters)
                 .Select(x => x.Trim())
-                .Where(x => !string.IsNullOrEmpty(x))
-                .OrderBy(x => x)
-                .GroupBy(x => x)
-                .ToArray();
-            return strVal;
+                .Where(x => !string.IsNullOrEmpty(x));
+            switch (sortDirection)
+            {
+                case SortDirection.Ascending:
+                    results = results.OrderBy(x => x);
+                    break;
+
+                case SortDirection.Descending:
+                    results = results.OrderByDescending(x => x);
+                    break;
+
+                default:
+                    results = results.OrderBy(x => x);
+                    break;
+            }
+            return results.GroupBy(x => x).ToArray();
         }
 
-        public static string[] NumberSortAscending(string values)
+        public static string[] NumberSort(string values, SortDirection sortDirection)
         {
-            return values
+            IEnumerable<string> results = values
                 .Split(delimeters)
                 .Select(x => x.Trim())
-                .Where(x => !string.IsNullOrEmpty(x))
-                .OrderBy(x => int.Parse(x))
-                .ToArray();
+                .Where(x => !string.IsNullOrEmpty(x));
+            switch (sortDirection)
+            {
+                case SortDirection.Ascending:
+                    results = results.OrderBy(x => float.Parse(x));
+                    break;
+
+                case SortDirection.Descending:
+                    results = results.OrderByDescending(x => float.Parse(x));
+                    break;
+
+                default:
+                    results = results.OrderBy(x => float.Parse(x));
+                    break;
+            }
+            return results.ToArray();
         }
 
-        public static string[] NumberSortDescending(string values)
+        public static JToken[] ObjectSortByKeyword(JArray values, string sortKeyword, SortDirection sortDirection)
         {
-            return values
-                .Split(delimeters)
-                .Select(x => x.Trim())
-                .Where(x => !string.IsNullOrEmpty(x))
-                .OrderByDescending(x => int.Parse(x))
-                .ToArray();
+            switch (sortDirection)
+            {
+                case SortDirection.Ascending:
+                    return new JArray(values.OrderBy(obj => obj[sortKeyword])).ToArray();
+
+                case SortDirection.Descending:
+                    return new JArray(values.OrderByDescending(obj => obj[sortKeyword])).ToArray();
+
+                default:
+                    break;
+            }
+            return new JArray(values.OrderBy(obj => obj[sortKeyword])).ToArray();
         }
-
-        public static JToken[] ObjectSort(JArray values, string sortKeyword)
-        {
-            return  new JArray(values.OrderBy(obj => (string)obj[sortKeyword])).ToArray();
-        }
-
-
 
         #region QuickSort
 

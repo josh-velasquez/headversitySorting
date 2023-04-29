@@ -13,7 +13,7 @@ const App = () => {
       <div
         style={{
           backgroundColor: "#1d3557",
-          height: "100%",
+          height: 1200,
         }}
       >
         <BrowserRouter>

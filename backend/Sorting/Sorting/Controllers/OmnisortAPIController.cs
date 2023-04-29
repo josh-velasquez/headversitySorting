@@ -13,12 +13,13 @@ namespace Sorting.Controllers
         private SortedValues SortObjects(SortValues sortValues)
         {
             string sortStrings = sortValues.SortStrings.Trim();
+            SortDirection sortDirection = Enum.Parse<SortDirection>(sortValues.SortDirection ?? string.Empty);
             string sortKeyword = sortValues.SortKeyword ?? string.Empty.Trim();
             SortType sortType = Enum.Parse<SortType>(sortValues.SortType ?? string.Empty);
 
             SortedValues result = new SortedValues()
             {
-                Id = 1,
+                Id = Guid.NewGuid(),
                 Date = DateTime.Now
             };
 
@@ -26,49 +27,36 @@ namespace Sorting.Controllers
             {
                 case SortType.Alphabet:
                     Debug.WriteLine("Alphabet Sort");
-                    string[] alphabetVals = SortingAlgorithms.AlphabetSort(sortStrings);
+                    string[] alphabetVals = SortingAlgorithms.AlphabetSort(sortStrings, sortDirection);
                     string alphabetResults = Converters.ConvertToString(alphabetVals);
                     result.Payload = alphabetResults;
                     return result;
 
                 case SortType.Number:
                     Debug.WriteLine("Number Sort");
-                    string[] numberVals = SortingAlgorithms.NumberSortAscending(sortStrings);
+                    string[] numberVals = SortingAlgorithms.NumberSort(sortStrings, sortDirection);
                     string numberResults = Converters.ConvertToString(numberVals);
                     result.Payload = numberResults;
                     return result;
 
                 case SortType.Grouping:
                     Debug.WriteLine("Grouping Sort");
-                    IGrouping<string, string>[] groupVals = SortingAlgorithms.GroupStringSort(sortStrings);
+                    IGrouping<string, string>[] groupVals = SortingAlgorithms.GroupStringSort(sortStrings, sortDirection);
                     string groupingResults = Converters.ConvertToString(groupVals);
                     result.Payload = groupingResults;
                     return result;
 
                 case SortType.CustomKeyword:
-                    Debug.WriteLine("Custom Sort");
-
-                    //// sort here
-                    //foreach (var item in sortObjects)
-                    //{
-                    //    Debug.WriteLine(item);
-                    //    dynamic sortObject = JObject.Parse(item.ToString());
-                    //    string id = sortObject[sortKeyword];
-                    //    Debug.WriteLine(id);
-                    //}
-                    //break;
-                    // TODO: Fix custom objects
-                    JArray sortObjects = JArray.Parse(sortStrings);
-                    JToken[] customResult = SortingAlgorithms.ObjectSort(sortObjects, sortKeyword);
-                    string[] res = Converters.ConvertObjectToStringArray(customResult);
-                    string test = Converters.ConvertToString(res);
-                    result.Payload = test;
+                    Debug.WriteLine("Custom Sort"); JArray sortObjects = JArray.Parse(sortStrings);
+                    JToken[] customResult = SortingAlgorithms.ObjectSortByKeyword(sortObjects, sortKeyword, sortDirection);
+                    string customKeywordResults = Converters.ConvertToString(customResult);
+                    result.Payload = customKeywordResults;
                     return result;
 
                 default:
-                    return new SortedValues() { Id = 1, Date = DateTime.Now, Payload = "123" };
+                    result.Payload = "Invalid input.";
+                    return result;
             }
-            return new SortedValues() { Id = 1, Date = DateTime.Now, Payload = "123" };
         }
 
         [HttpPost]
@@ -89,10 +77,9 @@ namespace Sorting.Controllers
             {
                 return SortObjects(toSortValues);
             }
-            // TODO: fix sort type typing
             catch (Exception ex)
             {
-                return BadRequest(toSortValues);
+                return BadRequest("Unable to sort objects: " + ex);
             }
         }
 

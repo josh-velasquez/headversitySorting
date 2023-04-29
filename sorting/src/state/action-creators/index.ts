@@ -6,6 +6,7 @@ import config from "../../config.json";
 
 export const requestApi = (
   sortStrings: string,
+  sortDirection: string,
   sortKeyword?: string,
   sortType?: string
 ) => {
@@ -14,8 +15,10 @@ export const requestApi = (
       type: ActionType.REQUEST_API,
     });
     try {
+      console.warn("HERE: " + sortDirection)
       const { data } = await axios.post(`${config.serverBaseUrl}/api/sort/`, {
         sortStrings: sortStrings,
+        sortDirection: sortDirection,
         sortKeyword: sortKeyword,
         sortType: sortType?.replace(" ", ""),
       });
@@ -35,6 +38,7 @@ export const requestApi = (
 
 export const requestApiFileUpload = (
   file: File,
+  sortDirection: string,
   sortKeyword?: string,
   sortType?: string
 ) => {
@@ -45,6 +49,7 @@ export const requestApiFileUpload = (
     try {
       const formData = new FormData();
       formData.append("formFile", file);
+      formData.append("sortDirection", sortDirection);
       formData.append("sortKeyword", sortKeyword ?? "");
       formData.append("sortType", JSON.stringify(sortType?.replace(" ", "")));
       const { data } = await axios.post(

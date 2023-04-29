@@ -1,0 +1,86 @@
+[
+ {
+   "id": 8,
+   "name": "Star",
+   "age": 1,
+   "weight": "195.67 (lbs)",
+   "height": "15.06 (cm)"
+ },
+ {
+   "id": 4,
+   "name": "Gareth",
+   "age": 2,
+   "weight": "53.72 (lbs)",
+   "height": "82.21 (cm)"
+ },
+ {
+   "id": 11,
+   "name": "Tailor",
+   "age": 3,
+   "weight": "140.27 (lbs)",
+   "height": "223.43 (cm)"
+ },
+ {
+   "id": 9,
+   "name": "Agretha",
+   "age": 4,
+   "weight": "46 (lbs)",
+   "height": "249.2 (cm)"
+ },
+ {
+   "id": 0,
+   "name": "Lukas",
+   "age": 5,
+   "weight": "76.99 (lbs)",
+   "height": "20.08 (cm)"
+ },
+ {
+   "id": 10,
+   "name": "Aime",
+   "age": 6,
+   "weight": "123.74 (lbs)",
+   "height": "34.98 (cm)"
+ },
+ {
+   "id": 1,
+   "name": "Abner",
+   "age": 7,
+   "weight": "160.97 (lbs)",
+   "height": "198.37 (cm)"
+ },
+ {
+   "id": 12,
+   "name": "Marabel",
+   "age": 8,
+   "weight": "157.18 (lbs)",
+   "height": "170.22 (cm)"
+ },
+ {
+   "id": 7,
+   "name": "Yorker",
+   "age": 9,
+   "weight": "87.85 (lbs)",
+   "height": "76.62 (cm)"
+ },
+ {
+   "id": 5,
+   "name": "Carol",
+   "age": 10,
+   "weight": "182.94 (lbs)",
+   "height": "17.89 (cm)"
+ },
+ {
+   "id": 6,
+   "name": "Lauryn",
+   "age": 11,
+   "weight": "140.66 (lbs)",
+   "height": "61.66 (cm)"
+ },
+ {
+   "id": 2,
+   "name": "Kearney",
+   "age": 12,
+   "weight": "1.75 (lbs)",
+   "height": "8.96 (cm)"
+ }
+]

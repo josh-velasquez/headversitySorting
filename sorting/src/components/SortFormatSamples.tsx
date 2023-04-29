@@ -7,24 +7,19 @@ class SortFormatSamples extends React.Component {
       <Grid columns={3} divided="vertically" textAlign="center">
         <Grid.Column width={6}>
           <Segment style={{ backgroundColor: "#eff6e0" }} textAlign="left">
-            <Segment secondary>
-              [red,blue,red,black,green,blue,yellow,blue]
-            </Segment>
-            <Segment secondary>
-              [[8,4,19,3],[19,18,[2,0,1]],[[6,2],9,9,1]]
-            </Segment>
-            <Segment secondary>[😃,🤪,🥸,😍,😭]</Segment>
-            <Segment secondary>[b,d,a,K,r]</Segment>
             <Segment secondary>[5,3,10,7,12,56]</Segment>
+            <Segment secondary>[red,blue,red,black,blue,yellow,blue]</Segment>
+            <Segment secondary>[b,d,a,K,r]</Segment>
+
             <Segment secondary>
               <pre>
                 {JSON.stringify(
                   {
-                    id: 0,
-                    name: "John Doe",
-                    age: 20,
-                    weight: "175 (lbs)",
-                    height: "188 (cm)",
+                    id: 8,
+                    name: "Star",
+                    age: 1,
+                    weight: "195.67 (lbs)",
+                    height: "15.06 (cm)",
                   },
                   null,
                   2
@@ -32,11 +27,35 @@ class SortFormatSamples extends React.Component {
                 ,
                 {JSON.stringify(
                   {
-                    id: 1,
-                    name: "Jane Smith",
-                    age: 22,
-                    weight: "120 (lbs)",
-                    height: "155 (cm)",
+                    id: 4,
+                    name: "Gareth",
+                    age: 2,
+                    weight: "53.72 (lbs)",
+                    height: "82.21 (cm)",
+                  },
+                  null,
+                  2
+                )}
+                ,
+                {JSON.stringify(
+                  {
+                    id: 11,
+                    name: "Tailor",
+                    age: 3,
+                    weight: "140.27 (lbs)",
+                    height: "223.43 (cm)",
+                  },
+                  null,
+                  2
+                )}
+                ,
+                {JSON.stringify(
+                  {
+                    id: 2,
+                    name: "Agretha",
+                    age: 4,
+                    weight: "46 (lbs)",
+                    height: "249.2 (cm)",
                   },
                   null,
                   2
@@ -54,19 +73,13 @@ class SortFormatSamples extends React.Component {
           <Segment style={{ backgroundColor: "#eff6e0" }}>
             <Segment secondary>
               <Container>
+                Sort by Number
+                <Icon className="arrow right" />
+              </Container>
+            </Segment>
+            <Segment secondary>
+              <Container>
                 Sort by Group
-                <Icon className="arrow right" />
-              </Container>
-            </Segment>
-            <Segment secondary>
-              <Container>
-                Flatten and sort
-                <Icon className="arrow right" />
-              </Container>
-            </Segment>
-            <Segment secondary>
-              <Container>
-                Sort by Unicode
                 <Icon className="arrow right" />
               </Container>
             </Segment>
@@ -78,13 +91,7 @@ class SortFormatSamples extends React.Component {
             </Segment>
             <Segment secondary>
               <Container>
-                Sort by Number
-                <Icon className="arrow right" />
-              </Container>
-            </Segment>
-            <Segment secondary>
-              <Container>
-                Sort by Keyword
+                Sort by Keyword (id)
                 <Icon className="arrow right" />
               </Container>
             </Segment>
@@ -92,24 +99,20 @@ class SortFormatSamples extends React.Component {
         </GridColumn>
         <Grid.Column width={6}>
           <Segment style={{ backgroundColor: "#eff6e0" }} textAlign="left">
+            <Segment secondary>[3,5,7,10,12,56]</Segment>
             <Segment secondary>
-              [[black],[blue,blue,blue],[green],[red,red],[yellow]]
+              [[black],[blue,blue,blue],[red,red],[yellow]]
             </Segment>
-            <Segment secondary>
-              [[3,4,8,19],[18,19,[0,1,2]],[[2,6],1,9,9]]
-            </Segment>
-            <Segment secondary>[😃,🤪,🥸,😍,😭]</Segment>
-            <Segment secondary>[''b','d','a','K','r'']</Segment>
-            <Segment secondary>[5,3,10,7,12,56]</Segment>
+            <Segment secondary>[a,b,d,K,r]</Segment>
             <Segment secondary>
               <pre>
                 {JSON.stringify(
                   {
-                    id: 0,
-                    name: "John Doe",
-                    age: 20,
-                    weight: "175 (lbs)",
-                    height: "188 (cm)",
+                    id: 4,
+                    name: "Gareth",
+                    age: 2,
+                    weight: "53.72 (lbs)",
+                    height: "82.21 (cm)",
                   },
                   null,
                   2
@@ -117,11 +120,35 @@ class SortFormatSamples extends React.Component {
                 ,
                 {JSON.stringify(
                   {
-                    id: 1,
-                    name: "Jane Smith",
-                    age: 22,
-                    weight: "120 (lbs)",
-                    height: "155 (cm)",
+                    id: 8,
+                    name: "Star",
+                    age: 1,
+                    weight: "195.67 (lbs)",
+                    height: "15.06 (cm)",
+                  },
+                  null,
+                  2
+                )}
+                ,
+                {JSON.stringify(
+                  {
+                    id: 9,
+                    name: "Agretha",
+                    age: 4,
+                    weight: "46 (lbs)",
+                    height: "249.2 (cm)",
+                  },
+                  null,
+                  2
+                )}
+                ,
+                {JSON.stringify(
+                  {
+                    id: 11,
+                    name: "Tailor",
+                    age: 3,
+                    weight: "140.27 (lbs)",
+                    height: "223.43 (cm)",
                   },
                   null,
                   2

@@ -26,10 +26,16 @@ enum Keywords {
   CustomKeyword = "Custom Keyword",
 }
 
+enum SortDirections {
+  Ascending = "Ascending",
+  Descending = "Descending",
+}
+
 const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
   const [sortType, setSortType] = useState<string>(Keywords.Number);
   const [sortKeyword, setSortKeyword] = useState("");
+  const [sortDirection, setSortDirection] = useState<string>(SortDirections.Ascending);
   const [file, setFile] = useState<File>();
   const { data, error, loading } = useTypedSelector((state) => state.results);
   const { requestApi } = useActions();
@@ -44,14 +50,24 @@ const Omnisort: React.FC = () => {
     })
   );
 
+  const sortDirections: string[] = Object.values(SortDirections);
+  const sortDirectionOptions: DropdownItemProps[] = _.map(
+    sortDirections,
+    (sort: string, index: number) => ({
+      key: index,
+      text: sort,
+      value: index,
+    })
+  );
+
   // TODO: Auto detect the type of the array to sort easier
 
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (file !== undefined) {
-      requestApiFileUpload(file, sortKeyword ?? "", sortType);
+      requestApiFileUpload(file, sortDirection, sortKeyword ?? "", sortType);
     } else {
-      requestApi(values, sortKeyword ?? "", sortType);
+      requestApi(values, sortDirection, sortKeyword ?? "", sortType);
     }
   };
 
@@ -72,16 +88,14 @@ const Omnisort: React.FC = () => {
     } else if (loading) {
       return "Fetching sorting results...";
     } else if (!error && !loading && data) {
-      // TODO: Destructure this to JSON object
-      // TODO: if its a file then show a download link for this
-      return JSON.stringify(data).replace(/['"]+/g, "");
+      return JSON.parse(JSON.stringify(data));
     } else {
       return "Your results here...";
     }
   };
 
   const onCopy = () => {
-    navigator.clipboard.writeText(JSON.stringify(data).replace(/['"]+/g, ""));
+    navigator.clipboard.writeText(JSON.parse(JSON.stringify(data)));
   };
 
   const onDownloadResults = () => {
@@ -90,11 +104,10 @@ const Omnisort: React.FC = () => {
   };
 
   const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
-    // TODO: FIX CUSTOM KEYWORD STYLING
     setSortKeyword(event.target.value);
   };
 
-  const onDropdownSelect = (
+  const onSortOrderSelect = (
     _: React.SyntheticEvent<HTMLElement, Event>,
     data: DropdownProps
   ) => {
@@ -102,7 +115,18 @@ const Omnisort: React.FC = () => {
       return;
     }
     if (typeof data.value === "number") {
-      console.warn(keywords[data.value]);
+      setSortDirection(sortDirections[data.value]);
+    }
+  };
+
+  const onSortBySelect = (
+    _: React.SyntheticEvent<HTMLElement, Event>,
+    data: DropdownProps
+  ) => {
+    if (data.value === null) {
+      return;
+    }
+    if (typeof data.value === "number") {
       setSortType(keywords[data.value]);
     }
   };
@@ -150,7 +174,7 @@ const Omnisort: React.FC = () => {
                   icon="key"
                   defaultValue={0}
                   options={keywordOptions}
-                  onChange={onDropdownSelect}
+                  onChange={onSortBySelect}
                   style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
                 />
                 {sortType === "Custom Keyword" && (
@@ -159,7 +183,21 @@ const Omnisort: React.FC = () => {
                     onChange={onCustomKeyword}
                   />
                 )}
+                <Dropdown
+                  button
+                  className="icon"
+                  floating
+                  selection
+                  labeled
+                  selectOnBlur={true}
+                  defaultValue={0}
+                  onChange={onSortOrderSelect}
+                  style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
+                  icon="sort"
+                  options={sortDirectionOptions}
+                />
               </Grid.Column>
+
               <Grid.Column>
                 <Button floated="right" positive>
                   Sort Me!
