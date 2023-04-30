@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using Sorting.Models;
 using Sorting.Util;
 using System.Diagnostics;
+using System.Text;
 
 namespace Sorting.Controllers
 {
@@ -10,9 +11,39 @@ namespace Sorting.Controllers
     [ApiController]
     public class OmnisortAPIController : ControllerBase
     {
-        private SortedValues SortObjects(SortValues sortValues)
+
+        private string SortValues(string sortStrings, SortDirection sortDirection, string sortKeyword, SortType sortType)
         {
             // TODO: Fix formatting of this code (extract this function to another class maybe)
+            switch (sortType)
+            {
+                case SortType.Alphabet:
+                    Debug.WriteLine("Alphabet Sort");
+                    string[] alphabetVals = SortingAlgorithms.AlphabetSort(sortStrings, sortDirection);
+                    return Converters.ConvertToString(alphabetVals);
+
+                case SortType.Number:
+                    Debug.WriteLine("Number Sort");
+                    string[] numberVals = SortingAlgorithms.NumberSort(sortStrings, sortDirection);
+                    return Converters.ConvertToString(numberVals);
+
+                case SortType.Grouping:
+                    Debug.WriteLine("Grouping Sort");
+                    IGrouping<string, string>[] groupVals = SortingAlgorithms.GroupStringSort(sortStrings, sortDirection);
+                    return Converters.ConvertToString(groupVals);
+
+                case SortType.CustomKeyword:
+                    Debug.WriteLine("Custom Sort"); JArray sortObjects = JArray.Parse(sortStrings);
+                    JToken[] customResult = SortingAlgorithms.ObjectSortByKeyword(sortObjects, sortKeyword, sortDirection);
+                    return Converters.ConvertToString(customResult);
+
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private SortedValues SortObjects(SortValues sortValues)
+        {
             string sortStrings = sortValues.SortStrings.Trim();
             SortDirection sortDirection = Enum.Parse<SortDirection>(sortValues.SortDirection ?? string.Empty);
             string sortKeyword = sortValues.SortKeyword ?? string.Empty.Trim();
@@ -21,43 +52,11 @@ namespace Sorting.Controllers
             SortedValues result = new SortedValues()
             {
                 Id = Guid.NewGuid(),
-                Date = DateTime.Now
+                Date = DateTime.Now,
+                Payload = SortValues(sortStrings, sortDirection, sortKeyword, sortType)
             };
 
-            switch (sortType)
-            {
-                case SortType.Alphabet:
-                    Debug.WriteLine("Alphabet Sort");
-                    string[] alphabetVals = SortingAlgorithms.AlphabetSort(sortStrings, sortDirection);
-                    string alphabetResults = Converters.ConvertToString(alphabetVals);
-                    result.Payload = alphabetResults;
-                    return result;
-
-                case SortType.Number:
-                    Debug.WriteLine("Number Sort");
-                    string[] numberVals = SortingAlgorithms.NumberSort(sortStrings, sortDirection);
-                    string numberResults = Converters.ConvertToString(numberVals);
-                    result.Payload = numberResults;
-                    return result;
-
-                case SortType.Grouping:
-                    Debug.WriteLine("Grouping Sort");
-                    IGrouping<string, string>[] groupVals = SortingAlgorithms.GroupStringSort(sortStrings, sortDirection);
-                    string groupingResults = Converters.ConvertToString(groupVals);
-                    result.Payload = groupingResults;
-                    return result;
-
-                case SortType.CustomKeyword:
-                    Debug.WriteLine("Custom Sort"); JArray sortObjects = JArray.Parse(sortStrings);
-                    JToken[] customResult = SortingAlgorithms.ObjectSortByKeyword(sortObjects, sortKeyword, sortDirection);
-                    string customKeywordResults = Converters.ConvertToString(customResult);
-                    result.Payload = customKeywordResults;
-                    return result;
-
-                default:
-                    result.Payload = "No valid sorting...";
-                    return result;
-            }
+            return result;
         }
 
         [HttpPost]
@@ -86,16 +85,26 @@ namespace Sorting.Controllers
 
         private SortedValuesFile SortObjectsInFile(SortValuesFile sortValuesFile)
         {
-            //string sortStrings = sortValues.SortStrings.Trim();
             IFormFile file = sortValuesFile.FormFile;
+            string fileName = file.FileName;
             SortDirection sortDirection = Enum.Parse<SortDirection>(sortValuesFile.SortDirection ?? string.Empty);
             string sortKeyword = sortValuesFile.SortKeyword ?? string.Empty.Trim();
             SortType sortType = Enum.Parse<SortType>(sortValuesFile.SortType ?? string.Empty);
             
-            using (var memStream = new MemoryStream())
+            // TODO: move to async function
+            StringBuilder stringBuilder = new StringBuilder();
+            using (StreamReader reader = new StreamReader(file.OpenReadStream()))
             {
-                file.CopyTo(memStream);
+                while (reader.Peek() >= 0)
+                {
+                    stringBuilder.Append(reader.ReadLine());
+                }
             }
+            string sortStrings = stringBuilder.ToString();
+            string payload = SortValues(sortStrings, sortDirection, sortKeyword, sortType);
+
+
+
             return new SortedValuesFile();
         }
 
@@ -119,12 +128,6 @@ namespace Sorting.Controllers
             {
                 return BadRequest("Unable to sort objects: " + ex);
             }
-
-            Debug.WriteLine("FILE: " + toSortValuesFile.FormFile.FileName);
-            Debug.WriteLine("SortKeyword: " + toSortValuesFile.SortKeyword);
-            Debug.WriteLine("SortOrder: " + toSortValuesFile.SortType);
-
-            return new SortedValuesFile();
         }
     }
 }

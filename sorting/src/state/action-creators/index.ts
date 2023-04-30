@@ -15,7 +15,6 @@ export const requestApi = (
       type: ActionType.REQUEST_API,
     });
     try {
-      console.warn("HERE: " + sortDirection)
       const { data } = await axios.post(`${config.serverBaseUrl}/api/sort/`, {
         sortStrings: sortStrings,
         sortDirection: sortDirection,
@@ -50,9 +49,8 @@ export const requestApiFileUpload = (
       const formData = new FormData();
       formData.append("formFile", file);
       formData.append("sortDirection", sortDirection);
-      formData.append("sortKeyword", sortKeyword ?? "");
-      // TODO: Fix this
-      formData.append("sortType", JSON.stringify(sortType?.replace(" ", "")));
+      formData.append("sortKeyword", sortKeyword?.replace(" ", "") ?? "");
+      formData.append("sortType", sortType ?? "");
       const { data } = await axios.post(
         `${config.serverBaseUrl}/api/sort/file`,
         formData
