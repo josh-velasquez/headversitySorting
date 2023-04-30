@@ -1,12 +1,14 @@
 import { Button, Form, Icon, TextArea } from "semantic-ui-react";
 
 interface ResultsPayload {
+  disableDownload: boolean;
   onUpdateResults: () => string;
   onDownloadResults: () => void;
   onCopy: () => void;
 }
 
 const Results: React.FC<ResultsPayload> = ({
+  disableDownload,
   onUpdateResults,
   onDownloadResults,
   onCopy,
@@ -19,7 +21,12 @@ const Results: React.FC<ResultsPayload> = ({
         placeholder="Results..."
         style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
       />
-      <Button floated="right" color="orange" onClick={onDownloadResults}>
+      <Button
+        floated="right"
+        color="orange"
+        disabled={disableDownload}
+        onClick={onDownloadResults}
+      >
         <Icon name="download" />
         Download Results
       </Button>

@@ -11,6 +11,6 @@
     {
         public Guid Id { get; set; }
         public DateTime Date { get; set; }
-        public IFormFile Payload { get; set; }
+        public string Payload { get; set; }
     }
 }

@@ -14,21 +14,10 @@ Sort within group
 
 ### TODO
 Front-end changes
-- [ ] Implement history for navigation
-- [ ] Implement sorting criteria
-- [ ] Add information on sorting functions
 - [ ] Add/Show exposed endpoints
-- [ ] Round corners of container for UI
-- [ ] Abstract requests on the front end
-- [X] Incorporate redux thunk for propagation?
-- [X] Sort in descending order
 
 Back-end changes
-- [ ] Parse through payload
-- [ ] Implement sorting algorithms here
-- [ ] Add overloads for processing objects sort
-- [ ] Abstract endpoints to a controller file
-- [X] Remove junk on Program.cs
+- [ ] Convert functions to async
 - [ ] Update CORS policy to only allow certain methods (also update origin urls -- localhost:3000)
 - [ ] Sorting algorithms has statistics
 

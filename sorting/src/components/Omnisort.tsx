@@ -35,7 +35,10 @@ const Omnisort: React.FC = () => {
   const [values, setValues] = useState("");
   const [sortType, setSortType] = useState<string>(Keywords.Number);
   const [sortKeyword, setSortKeyword] = useState("");
-  const [sortDirection, setSortDirection] = useState<string>(SortDirections.Ascending);
+  const [sortDirection, setSortDirection] = useState<string>(
+    SortDirections.Ascending
+  );
+  const [disableDownload, setDisabledDownload] = useState<boolean>(true);
   const [file, setFile] = useState<File>();
   const { data, error, loading } = useTypedSelector((state) => state.results);
   const { requestApi } = useActions();
@@ -88,7 +91,11 @@ const Omnisort: React.FC = () => {
     } else if (loading) {
       return "Fetching sorting results...";
     } else if (!error && !loading && data) {
-      return JSON.parse(JSON.stringify(data));
+      if (data.length !== 0) {
+        // setDisabledDownload(false);
+      }
+      // return JSON.parse(JSON.stringify(data));
+      return JSON.stringify(data);
     } else {
       return "Your results here...";
     }
@@ -100,6 +107,13 @@ const Omnisort: React.FC = () => {
 
   const onDownloadResults = () => {
     // TODO: enable this if a file is ready to download
+    // if file download then high
+    const strData = JSON.parse(JSON.stringify(data));
+    const blob = new Blob([strData], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.click();
     console.warn("Download file");
   };
 
@@ -197,7 +211,6 @@ const Omnisort: React.FC = () => {
                   options={sortDirectionOptions}
                 />
               </Grid.Column>
-
               <Grid.Column>
                 <Button floated="right" positive>
                   Sort Me!
@@ -208,6 +221,7 @@ const Omnisort: React.FC = () => {
         </Form>
         <Divider />
         <Results
+          disableDownload={disableDownload}
           onUpdateResults={onUpdateResults}
           onDownloadResults={onDownloadResults}
           onCopy={onCopy}
