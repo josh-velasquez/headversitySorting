@@ -12,6 +12,7 @@ namespace Sorting.Controllers
     {
         private SortedValues SortObjects(SortValues sortValues)
         {
+            // TODO: Fix formatting of this code (extract this function to another class maybe)
             string sortStrings = sortValues.SortStrings.Trim();
             SortDirection sortDirection = Enum.Parse<SortDirection>(sortValues.SortDirection ?? string.Empty);
             string sortKeyword = sortValues.SortKeyword ?? string.Empty.Trim();
@@ -54,7 +55,7 @@ namespace Sorting.Controllers
                     return result;
 
                 default:
-                    result.Payload = "Invalid input.";
+                    result.Payload = "No valid sorting...";
                     return result;
             }
         }
@@ -83,6 +84,21 @@ namespace Sorting.Controllers
             }
         }
 
+        private SortedValuesFile SortObjectsInFile(SortValuesFile sortValuesFile)
+        {
+            //string sortStrings = sortValues.SortStrings.Trim();
+            IFormFile file = sortValuesFile.FormFile;
+            SortDirection sortDirection = Enum.Parse<SortDirection>(sortValuesFile.SortDirection ?? string.Empty);
+            string sortKeyword = sortValuesFile.SortKeyword ?? string.Empty.Trim();
+            SortType sortType = Enum.Parse<SortType>(sortValuesFile.SortType ?? string.Empty);
+            
+            using (var memStream = new MemoryStream())
+            {
+                file.CopyTo(memStream);
+            }
+            return new SortedValuesFile();
+        }
+
         [HttpPost("file")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -95,6 +111,13 @@ namespace Sorting.Controllers
             if (toSortValuesFile == null)
             {
                 return BadRequest(toSortValuesFile);
+            }
+            try
+            {
+                return SortObjectsInFile(toSortValuesFile);
+            }catch (Exception ex)
+            {
+                return BadRequest("Unable to sort objects: " + ex);
             }
 
             Debug.WriteLine("FILE: " + toSortValuesFile.FormFile.FileName);

@@ -51,6 +51,7 @@ export const requestApiFileUpload = (
       formData.append("formFile", file);
       formData.append("sortDirection", sortDirection);
       formData.append("sortKeyword", sortKeyword ?? "");
+      // TODO: Fix this
       formData.append("sortType", JSON.stringify(sortType?.replace(" ", "")));
       const { data } = await axios.post(
         `${config.serverBaseUrl}/api/sort/file`,
