@@ -12,8 +12,6 @@ C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Deb
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.AssemblyInfo.cs
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.csproj.CoreCompileInputs.cache
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.MvcApplicationPartsAssemblyInfo.cache
-C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.RazorAssemblyInfo.cache
-C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.RazorAssemblyInfo.cs
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/staticwebassets/msbuild.Sorting.Microsoft.AspNetCore.StaticWebAssets.props
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/staticwebassets/msbuild.build.Sorting.props
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.Sorting.props
@@ -21,9 +19,7 @@ C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Deb
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/staticwebassets.pack.json
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/staticwebassets.build.json
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/staticwebassets.development.json
-C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/scopedcss/Pages/Shared/_Layout.cshtml.rz.scp.css
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/scopedcss/bundle/Sorting.styles.css
-C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/scopedcss/projectbundle/Sorting.bundle.scp.css
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.dll
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/refint/Sorting.dll
 C:/Users/Nemesis/Repositories/headversitySorting/backend/Sorting/Sorting/obj/Debug/net6.0/Sorting.pdb
@@ -109,8 +105,6 @@ C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Deb
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.AssemblyInfo.cs
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.csproj.CoreCompileInputs.cache
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.RazorAssemblyInfo.cache
-C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.RazorAssemblyInfo.cs
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\staticwebassets\msbuild.Sorting.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\staticwebassets\msbuild.build.Sorting.props
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Sorting.props
@@ -118,9 +112,7 @@ C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Deb
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\staticwebassets.pack.json
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\scopedcss\bundle\Sorting.styles.css
-C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\scopedcss\projectbundle\Sorting.bundle.scp.css
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.csproj.CopyComplete
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\Sorting.dll
 C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\obj\Debug\net6.0\refint\Sorting.dll

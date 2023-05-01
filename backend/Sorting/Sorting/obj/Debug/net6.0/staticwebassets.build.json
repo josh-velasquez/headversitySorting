@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "5dJ9KvbIs9Q86cYEd+zx2sSSrrANcxT3oYgri7HhCk8=",
+  "Hash": "iMSRQK07ZioQW+dwUFkMk2KjNrseacFYp6QhJ5ciTNc=",
   "Source": "Sorting",
   "BasePath": "_content/Sorting",
   "Mode": "Default",
@@ -16,40 +16,6 @@
     }
   ],
   "Assets": [
-    {
-      "Identity": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Sorting.styles.css",
-      "SourceId": "Sorting",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
-      "BasePath": "_content/Sorting",
-      "RelativePath": "Sorting.styles.css",
-      "AssetKind": "All",
-      "AssetMode": "CurrentProject",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ApplicationBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\bundle\\Sorting.styles.css"
-    },
-    {
-      "Identity": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Sorting.bundle.scp.css",
-      "SourceId": "Sorting",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
-      "BasePath": "_content/Sorting",
-      "RelativePath": "Sorting.bundle.scp.css",
-      "AssetKind": "All",
-      "AssetMode": "Reference",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "ScopedCss",
-      "AssetTraitValue": "ProjectBundle",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Sorting.bundle.scp.css"
-    },
     {
       "Identity": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\wwwroot\\css\\site.css",
       "SourceId": "Sorting",

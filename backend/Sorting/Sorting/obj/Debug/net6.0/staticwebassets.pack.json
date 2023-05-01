@@ -1,10 +1,6 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Sorting.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Sorting.bundle.scp.css"
-    },
-    {
       "Id": "C:\\Users\\Nemesis\\Repositories\\headversitySorting\\backend\\Sorting\\Sorting\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
