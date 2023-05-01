@@ -4943,3 +4943,742 @@ System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport
 2023-05-01 03:01:40.167 -06:00 [DBG] Connection id "0HMQA49QN4VNA" sending FIN because: "The client closed the connection."
 2023-05-01 03:01:40.168 -06:00 [DBG] Connection id "0HMQA49QN4VNA" disconnecting.
 2023-05-01 03:01:40.170 -06:00 [DBG] Connection id "0HMQA49QN4VNA" stopped.
+2023-05-01 10:56:56.533 -06:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-01 10:56:56.592 -06:00 [DBG] Hosting starting
+2023-05-01 10:56:56.711 -06:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 60F08CCC9EC3BB7BE4116D60B731B8B8FE28FC1B)
+2023-05-01 10:56:56.746 -06:00 [INF] Now listening on: https://localhost:7006
+2023-05-01 10:56:56.746 -06:00 [INF] Now listening on: http://localhost:5276
+2023-05-01 10:56:56.746 -06:00 [DBG] Loaded hosting startup assembly Sorting
+2023-05-01 10:56:56.746 -06:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-01 10:56:56.746 -06:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-01 10:56:56.746 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-01 10:56:56.746 -06:00 [INF] Hosting environment: Development
+2023-05-01 10:56:56.746 -06:00 [INF] Content root path: C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\
+2023-05-01 10:56:56.746 -06:00 [DBG] Hosting started
+2023-05-01 10:56:57.194 -06:00 [DBG] Connection id "0HMQACK9E1695" accepted.
+2023-05-01 10:56:57.195 -06:00 [DBG] Connection id "0HMQACK9E1695" started.
+2023-05-01 10:56:57.199 -06:00 [DBG] Connection id "0HMQACK9E1696" accepted.
+2023-05-01 10:56:57.199 -06:00 [DBG] Connection id "0HMQACK9E1696" started.
+2023-05-01 10:56:57.496 -06:00 [DBG] Connection id "0HMQACK9E1697" accepted.
+2023-05-01 10:56:57.496 -06:00 [DBG] Connection id "0HMQACK9E1697" started.
+2023-05-01 10:56:57.539 -06:00 [DBG] Connection 0HMQACK9E1697 established using the following protocol: "Tls13"
+2023-05-01 10:56:57.586 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7006/ - -
+2023-05-01 10:56:57.622 -06:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-01 10:56:57.644 -06:00 [DBG] 1 candidate(s) found for the request path '/'
+2023-05-01 10:56:57.645 -06:00 [DBG] Request matched endpoint 'HTTP: GET /'
+2023-05-01 10:56:57.647 -06:00 [INF] Executing endpoint 'HTTP: GET /'
+2023-05-01 10:56:57.669 -06:00 [INF] Executed endpoint 'HTTP: GET /'
+2023-05-01 10:56:57.674 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7006/ - - - 200 - text/plain;+charset=utf-8 91.2454ms
+2023-05-01 10:56:57.895 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7006/favicon.ico - -
+2023-05-01 10:56:57.895 -06:00 [DBG] No candidates found for the request path '/favicon.ico'
+2023-05-01 10:56:57.895 -06:00 [DBG] Request did not match any endpoints
+2023-05-01 10:56:57.895 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7006/favicon.ico - - - 404 0 - 0.8160ms
+2023-05-01 10:57:01.800 -06:00 [DBG] Connection id "0HMQACK9E1698" accepted.
+2023-05-01 10:57:01.800 -06:00 [DBG] Connection id "0HMQACK9E1698" started.
+2023-05-01 10:57:01.803 -06:00 [DBG] Connection 0HMQACK9E1698 established using the following protocol: "Tls13"
+2023-05-01 10:57:01.804 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 10:57:01.805 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 10:57:01.805 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 10:57:01.805 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 10:57:01.805 -06:00 [INF] CORS policy execution successful.
+2023-05-01 10:57:01.806 -06:00 [DBG] The request is a preflight request.
+2023-05-01 10:57:01.806 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 1.9367ms
+2023-05-01 10:57:01.808 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 103
+2023-05-01 10:57:01.808 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 10:57:01.810 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 10:57:01.810 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 10:57:01.810 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 10:57:01.810 -06:00 [INF] CORS policy execution successful.
+2023-05-01 10:57:01.811 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 10:57:01.824 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 10:57:01.825 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 10:57:01.825 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 10:57:01.825 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 10:57:01.825 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 10:57:01.825 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 10:57:01.825 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 10:57:01.826 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 10:57:01.834 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 10:57:01.836 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 10:57:01.836 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 10:57:01.839 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000003": started reading request body.
+2023-05-01 10:57:01.840 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000003": done reading request body.
+2023-05-01 10:57:01.842 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 10:57:01.842 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 10:57:01.842 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 10:57:01.842 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 10:57:01.850 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 10:57:01.913 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 10:57:01.914 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 10:57:01.914 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 10:57:01.914 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 10:57:01.914 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 10:57:01.914 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 10:57:01.932 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 104.6502ms
+2023-05-01 10:57:01.933 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 10:57:01.933 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 103 - 200 - application/json;+charset=utf-8 125.5571ms
+2023-05-01 10:57:07.208 -06:00 [DBG] Authentication of the HTTPS connection timed out.
+2023-05-01 10:57:07.208 -06:00 [DBG] Authentication of the HTTPS connection timed out.
+2023-05-01 10:57:07.211 -06:00 [DBG] Connection id "0HMQACK9E1695" stopped.
+2023-05-01 10:57:07.211 -06:00 [DBG] Connection id "0HMQACK9E1696" stopped.
+2023-05-01 10:57:07.212 -06:00 [DBG] Connection id "0HMQACK9E1695" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 10:57:07.212 -06:00 [DBG] Connection id "0HMQACK9E1696" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 10:58:10.252 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 10:58:10.252 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 10:58:10.252 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 10:58:10.252 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 10:58:10.252 -06:00 [INF] CORS policy execution successful.
+2023-05-01 10:58:10.252 -06:00 [DBG] The request is a preflight request.
+2023-05-01 10:58:10.252 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.6052ms
+2023-05-01 10:58:10.253 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 104
+2023-05-01 10:58:10.253 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 10:58:10.253 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 10:58:10.254 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 10:58:10.254 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 10:58:10.254 -06:00 [INF] CORS policy execution successful.
+2023-05-01 10:58:10.254 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 10:58:10.254 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 10:58:10.254 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 10:58:10.254 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 10:58:10.254 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 10:58:10.254 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 10:58:10.254 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 10:58:10.254 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 10:58:10.254 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 10:58:10.254 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 10:58:10.254 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 10:58:10.254 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 10:58:10.254 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000007": started reading request body.
+2023-05-01 10:58:10.254 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000007": done reading request body.
+2023-05-01 10:58:10.254 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 10:58:10.254 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 10:58:10.254 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 10:58:10.254 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 10:58:10.254 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 10:58:10.255 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 10:58:10.255 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 10:58:10.255 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 10:58:10.255 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 10:58:10.255 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 10:58:10.255 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 10:58:10.255 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 1.406ms
+2023-05-01 10:58:10.255 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 10:58:10.255 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 104 - 200 - application/json;+charset=utf-8 1.9420ms
+2023-05-01 11:01:46.039 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:01:46.039 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:01:46.039 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:01:46.039 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:01:46.039 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:01:46.040 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:01:46.040 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.8413ms
+2023-05-01 11:01:46.044 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 114
+2023-05-01 11:01:46.044 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:01:46.044 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:01:46.044 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:01:46.044 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:01:46.044 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:01:46.044 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:01:46.044 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:01:46.044 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:01:46.044 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:01:46.044 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:01:46.044 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:01:46.044 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:01:46.044 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:01:46.044 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:01:46.044 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:01:46.044 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:01:46.044 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:01:46.045 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000000B": started reading request body.
+2023-05-01 11:01:46.045 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000000B": done reading request body.
+2023-05-01 11:01:46.045 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:01:46.045 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:01:46.045 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:01:46.045 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:01:46.045 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:01:46.045 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:01:46.045 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:01:46.045 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:01:46.045 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:01:46.045 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:01:46.045 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:01:46.045 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 1.1289ms
+2023-05-01 11:01:46.045 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:01:46.045 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 114 - 200 - application/json;+charset=utf-8 1.5506ms
+2023-05-01 11:02:06.531 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:02:06.531 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:02:06.531 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:02:06.531 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:02:06.531 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:02:06.531 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:02:06.532 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.3460ms
+2023-05-01 11:02:06.534 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 113
+2023-05-01 11:02:06.535 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:02:06.535 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:02:06.535 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:02:06.535 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:02:06.535 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:02:06.535 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:02:06.535 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:02:06.535 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:02:06.535 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:02:06.535 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:02:06.535 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:02:06.535 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:02:06.535 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:02:06.535 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:02:06.535 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:02:06.535 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:02:06.535 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:02:06.535 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000000F": started reading request body.
+2023-05-01 11:02:06.535 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000000F": done reading request body.
+2023-05-01 11:02:06.535 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:02:06.535 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:02:06.535 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:02:06.535 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:02:06.535 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:02:06.535 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:02:06.535 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:02:06.535 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:02:06.535 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:02:06.535 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:02:06.535 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:02:06.535 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 0.6737ms
+2023-05-01 11:02:06.535 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:02:06.535 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 113 - 200 - application/json;+charset=utf-8 0.9861ms
+2023-05-01 11:02:14.056 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:02:14.056 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:02:14.056 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:02:14.056 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:02:14.056 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:02:14.056 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:02:14.056 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.2909ms
+2023-05-01 11:02:14.057 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 114
+2023-05-01 11:02:14.057 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:02:14.057 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:02:14.057 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:02:14.057 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:02:14.057 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:02:14.057 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:02:14.057 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:02:14.057 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:02:14.057 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:02:14.057 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:02:14.058 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:02:14.058 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:02:14.058 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:02:14.058 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:02:14.058 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:02:14.058 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:02:14.058 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:02:14.058 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000013": started reading request body.
+2023-05-01 11:02:14.058 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000013": done reading request body.
+2023-05-01 11:02:14.058 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:02:14.058 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:02:14.058 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:02:14.058 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:02:14.058 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:02:14.058 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:02:14.058 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:02:14.058 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:02:14.058 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:02:14.058 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:02:14.058 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:02:14.058 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 0.7229ms
+2023-05-01 11:02:14.058 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:02:14.058 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 114 - 200 - application/json;+charset=utf-8 1.3140ms
+2023-05-01 11:03:31.345 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:03:31.345 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:03:31.345 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:03:31.345 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:03:31.345 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:03:31.345 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:03:31.346 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.2887ms
+2023-05-01 11:03:31.348 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 123
+2023-05-01 11:03:31.348 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:03:31.348 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:03:31.348 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:03:31.348 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:03:31.348 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:03:31.348 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:03:31.349 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:03:31.349 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:03:31.349 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:03:31.349 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:03:31.349 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:03:31.349 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:03:31.349 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:03:31.349 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:03:31.349 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:03:31.349 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:03:31.349 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:03:31.349 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000017": started reading request body.
+2023-05-01 11:03:31.349 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000017": done reading request body.
+2023-05-01 11:03:31.349 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:03:31.349 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:03:31.349 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:03:31.349 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:03:31.349 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:03:31.350 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:03:31.350 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:03:31.350 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:03:31.350 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:03:31.350 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:03:31.350 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:03:31.350 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 1.7278ms
+2023-05-01 11:03:31.350 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:03:31.350 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 123 - 200 - application/json;+charset=utf-8 2.1157ms
+2023-05-01 11:03:59.966 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:03:59.966 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:03:59.966 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:03:59.966 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:03:59.966 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:03:59.966 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:03:59.966 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.2432ms
+2023-05-01 11:03:59.970 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 124
+2023-05-01 11:03:59.970 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:03:59.970 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:03:59.970 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:03:59.970 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:03:59.970 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:03:59.970 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:03:59.970 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:03:59.970 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:03:59.970 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:03:59.970 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:03:59.970 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:03:59.970 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:03:59.970 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:03:59.970 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:03:59.970 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:03:59.970 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:03:59.970 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:03:59.970 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000001B": started reading request body.
+2023-05-01 11:03:59.970 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000001B": done reading request body.
+2023-05-01 11:03:59.970 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:03:59.970 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:03:59.970 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:03:59.970 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:03:59.970 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:03:59.971 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:03:59.971 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:03:59.971 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:03:59.971 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:03:59.971 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:03:59.971 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:03:59.971 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 0.732ms
+2023-05-01 11:03:59.971 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:03:59.971 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 124 - 200 - application/json;+charset=utf-8 1.0749ms
+2023-05-01 11:08:44.274 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:08:44.274 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:08:44.274 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:08:44.275 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:08:44.275 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:08:44.275 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:08:44.275 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 0.7592ms
+2023-05-01 11:08:44.279 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 529
+2023-05-01 11:08:44.279 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:08:44.279 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:08:44.279 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:08:44.279 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:08:44.279 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:08:44.279 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:08:44.280 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:08:44.280 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:08:44.280 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:08:44.280 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:08:44.280 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:08:44.280 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:08:44.280 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:08:44.280 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:08:44.280 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:08:44.280 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:08:44.280 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:08:44.280 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000001F": started reading request body.
+2023-05-01 11:08:44.280 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:0000001F": done reading request body.
+2023-05-01 11:08:44.280 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:08:44.280 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:08:44.280 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:08:44.280 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:08:44.280 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:08:44.341 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:08:44.341 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:08:44.341 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:08:44.341 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:08:44.341 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:08:44.341 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:08:44.341 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 61.4834ms
+2023-05-01 11:08:44.341 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:08:44.341 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 529 - 200 - application/json;+charset=utf-8 61.9737ms
+2023-05-01 11:08:49.121 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 528
+2023-05-01 11:08:49.122 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:08:49.122 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:08:49.122 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:08:49.122 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:08:49.122 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:08:49.122 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:08:49.122 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:08:49.122 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:08:49.122 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:08:49.122 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:08:49.122 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:08:49.122 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:08:49.122 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:08:49.122 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:08:49.122 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:08:49.122 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:08:49.122 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:08:49.122 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000021": started reading request body.
+2023-05-01 11:08:49.122 -06:00 [DBG] Connection id "0HMQACK9E1698", Request id "0HMQACK9E1698:00000021": done reading request body.
+2023-05-01 11:08:49.122 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:08:49.122 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:08:49.122 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:08:49.122 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:08:49.122 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:08:49.122 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:08:49.122 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:08:49.122 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:08:49.122 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:08:49.122 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:08:49.122 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:08:49.122 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 0.7243ms
+2023-05-01 11:08:49.123 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:08:49.123 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 528 - 200 - application/json;+charset=utf-8 1.1323ms
+2023-05-01 11:10:26.071 -06:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-01 11:10:26.126 -06:00 [DBG] Hosting starting
+2023-05-01 11:10:26.230 -06:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 60F08CCC9EC3BB7BE4116D60B731B8B8FE28FC1B)
+2023-05-01 11:10:26.264 -06:00 [INF] Now listening on: https://localhost:7006
+2023-05-01 11:10:26.264 -06:00 [INF] Now listening on: http://localhost:5276
+2023-05-01 11:10:26.264 -06:00 [DBG] Loaded hosting startup assembly Sorting
+2023-05-01 11:10:26.264 -06:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-01 11:10:26.264 -06:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-01 11:10:26.264 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-01 11:10:26.264 -06:00 [INF] Hosting environment: Development
+2023-05-01 11:10:26.264 -06:00 [INF] Content root path: C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\
+2023-05-01 11:10:26.264 -06:00 [DBG] Hosting started
+2023-05-01 11:10:26.605 -06:00 [DBG] Connection id "0HMQACRQL6HFV" received FIN.
+2023-05-01 11:10:26.605 -06:00 [DBG] Connection id "0HMQACRQL6HG0" received FIN.
+2023-05-01 11:10:26.611 -06:00 [DBG] Connection id "0HMQACRQL6HG0" accepted.
+2023-05-01 11:10:26.611 -06:00 [DBG] Connection id "0HMQACRQL6HFV" accepted.
+2023-05-01 11:10:26.612 -06:00 [DBG] Connection id "0HMQACRQL6HFV" started.
+2023-05-01 11:10:26.612 -06:00 [DBG] Connection id "0HMQACRQL6HG0" started.
+2023-05-01 11:10:26.624 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:10:26.624 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:10:26.649 -06:00 [DBG] Connection id "0HMQACRQL6HFV" stopped.
+2023-05-01 11:10:26.649 -06:00 [DBG] Connection id "0HMQACRQL6HG0" stopped.
+2023-05-01 11:10:26.651 -06:00 [DBG] Connection id "0HMQACRQL6HG0" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:10:26.651 -06:00 [DBG] Connection id "0HMQACRQL6HFV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:10:26.834 -06:00 [DBG] Connection id "0HMQACRQL6HG1" accepted.
+2023-05-01 11:10:26.834 -06:00 [DBG] Connection id "0HMQACRQL6HG1" started.
+2023-05-01 11:10:26.859 -06:00 [DBG] Connection 0HMQACRQL6HG1 established using the following protocol: "Tls13"
+2023-05-01 11:10:26.902 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7006/ - -
+2023-05-01 11:10:26.935 -06:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-01 11:10:26.954 -06:00 [DBG] 1 candidate(s) found for the request path '/'
+2023-05-01 11:10:26.954 -06:00 [DBG] Request matched endpoint 'HTTP: GET /'
+2023-05-01 11:10:26.956 -06:00 [INF] Executing endpoint 'HTTP: GET /'
+2023-05-01 11:10:26.972 -06:00 [INF] Executed endpoint 'HTTP: GET /'
+2023-05-01 11:10:26.977 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7006/ - - - 200 - text/plain;+charset=utf-8 76.8090ms
+2023-05-01 11:10:30.087 -06:00 [DBG] Connection id "0HMQACRQL6HG2" accepted.
+2023-05-01 11:10:30.088 -06:00 [DBG] Connection id "0HMQACRQL6HG2" started.
+2023-05-01 11:10:30.094 -06:00 [DBG] Connection 0HMQACRQL6HG2 established using the following protocol: "Tls13"
+2023-05-01 11:10:30.095 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:10:30.095 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:10:30.095 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:10:30.095 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:10:30.096 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:10:30.096 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:10:30.096 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 1.5357ms
+2023-05-01 11:10:30.100 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 529
+2023-05-01 11:10:30.100 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:10:30.102 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:10:30.102 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:10:30.103 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:10:30.103 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:10:30.103 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:10:30.114 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:10:30.115 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:10:30.115 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:10:30.115 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:10:30.115 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:10:30.115 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:10:30.115 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:10:30.115 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:10:30.123 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:10:30.124 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:10:30.124 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:10:30.127 -06:00 [DBG] Connection id "0HMQACRQL6HG2", Request id "0HMQACRQL6HG2:00000003": started reading request body.
+2023-05-01 11:10:30.127 -06:00 [DBG] Connection id "0HMQACRQL6HG2", Request id "0HMQACRQL6HG2:00000003": done reading request body.
+2023-05-01 11:10:30.130 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:10:30.130 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:10:30.130 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:10:30.130 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:10:30.135 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:10:30.203 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:10:30.204 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:10:30.204 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:10:30.204 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:10:30.205 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:10:30.205 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:10:30.221 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 103.5947ms
+2023-05-01 11:10:30.222 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:10:30.222 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 529 - 200 - application/json;+charset=utf-8 121.6075ms
+2023-05-01 11:19:27.789 -06:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-01 11:19:27.839 -06:00 [DBG] Hosting starting
+2023-05-01 11:19:27.920 -06:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 60F08CCC9EC3BB7BE4116D60B731B8B8FE28FC1B)
+2023-05-01 11:19:27.944 -06:00 [INF] Now listening on: https://localhost:7006
+2023-05-01 11:19:27.944 -06:00 [INF] Now listening on: http://localhost:5276
+2023-05-01 11:19:27.944 -06:00 [DBG] Loaded hosting startup assembly Sorting
+2023-05-01 11:19:27.944 -06:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-01 11:19:27.944 -06:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-01 11:19:27.944 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-01 11:19:27.944 -06:00 [INF] Hosting environment: Development
+2023-05-01 11:19:27.944 -06:00 [INF] Content root path: C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\
+2023-05-01 11:19:27.944 -06:00 [DBG] Hosting started
+2023-05-01 11:19:28.414 -06:00 [DBG] Connection id "0HMQAD0S493RT" accepted.
+2023-05-01 11:19:28.415 -06:00 [DBG] Connection id "0HMQAD0S493RT" started.
+2023-05-01 11:19:28.421 -06:00 [DBG] Connection id "0HMQAD0S493RU" accepted.
+2023-05-01 11:19:28.421 -06:00 [DBG] Connection id "0HMQAD0S493RU" started.
+2023-05-01 11:19:28.438 -06:00 [DBG] Connection id "0HMQAD0S493RU" received FIN.
+2023-05-01 11:19:28.438 -06:00 [DBG] Connection id "0HMQAD0S493RT" received FIN.
+2023-05-01 11:19:28.457 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:19:28.457 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:19:28.488 -06:00 [DBG] Connection id "0HMQAD0S493RU" stopped.
+2023-05-01 11:19:28.488 -06:00 [DBG] Connection id "0HMQAD0S493RT" stopped.
+2023-05-01 11:19:28.490 -06:00 [DBG] Connection id "0HMQAD0S493RT" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:19:28.490 -06:00 [DBG] Connection id "0HMQAD0S493RU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:19:28.686 -06:00 [DBG] Connection id "0HMQAD0S493RV" accepted.
+2023-05-01 11:19:28.686 -06:00 [DBG] Connection id "0HMQAD0S493RV" started.
+2023-05-01 11:19:28.712 -06:00 [DBG] Connection 0HMQAD0S493RV established using the following protocol: "Tls13"
+2023-05-01 11:19:28.747 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7006/ - -
+2023-05-01 11:19:28.773 -06:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-01 11:19:28.791 -06:00 [DBG] 1 candidate(s) found for the request path '/'
+2023-05-01 11:19:28.791 -06:00 [DBG] Request matched endpoint 'HTTP: GET /'
+2023-05-01 11:19:28.793 -06:00 [INF] Executing endpoint 'HTTP: GET /'
+2023-05-01 11:19:28.808 -06:00 [INF] Executed endpoint 'HTTP: GET /'
+2023-05-01 11:19:28.812 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7006/ - - - 200 - text/plain;+charset=utf-8 67.2555ms
+2023-05-01 11:19:31.310 -06:00 [DBG] Connection id "0HMQAD0S493S0" accepted.
+2023-05-01 11:19:31.310 -06:00 [DBG] Connection id "0HMQAD0S493S0" started.
+2023-05-01 11:19:31.312 -06:00 [DBG] Connection 0HMQAD0S493S0 established using the following protocol: "Tls13"
+2023-05-01 11:19:31.314 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:19:31.314 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:19:31.314 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:19:31.314 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:19:31.314 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:19:31.315 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:19:31.315 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 1.6817ms
+2023-05-01 11:19:31.320 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 527
+2023-05-01 11:19:31.320 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:19:31.322 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:19:31.322 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:19:31.322 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:19:31.322 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:19:31.322 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:19:31.334 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:19:31.335 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:19:31.335 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:19:31.335 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:19:31.335 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:19:31.335 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:19:31.336 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:19:31.336 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:19:31.344 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:19:31.345 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:19:31.346 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:19:31.349 -06:00 [DBG] Connection id "0HMQAD0S493S0", Request id "0HMQAD0S493S0:00000003": started reading request body.
+2023-05-01 11:19:31.349 -06:00 [DBG] Connection id "0HMQAD0S493S0", Request id "0HMQAD0S493S0:00000003": done reading request body.
+2023-05-01 11:19:31.351 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:19:31.352 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:19:31.352 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:19:31.352 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:19:31.359 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:19:31.428 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:19:31.430 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:19:31.430 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:19:31.430 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:19:31.430 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:19:31.430 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:19:31.447 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 108.7852ms
+2023-05-01 11:19:31.447 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:19:31.447 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 527 - 200 - application/json;+charset=utf-8 127.8826ms
+2023-05-01 11:22:14.078 -06:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-01 11:22:14.129 -06:00 [DBG] Hosting starting
+2023-05-01 11:22:14.220 -06:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 60F08CCC9EC3BB7BE4116D60B731B8B8FE28FC1B)
+2023-05-01 11:22:14.245 -06:00 [INF] Now listening on: https://localhost:7006
+2023-05-01 11:22:14.245 -06:00 [INF] Now listening on: http://localhost:5276
+2023-05-01 11:22:14.246 -06:00 [DBG] Loaded hosting startup assembly Sorting
+2023-05-01 11:22:14.246 -06:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-01 11:22:14.246 -06:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-01 11:22:14.246 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-01 11:22:14.246 -06:00 [INF] Hosting environment: Development
+2023-05-01 11:22:14.246 -06:00 [INF] Content root path: C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\
+2023-05-01 11:22:14.246 -06:00 [DBG] Hosting started
+2023-05-01 11:22:14.598 -06:00 [DBG] Connection id "0HMQAD2DL487N" accepted.
+2023-05-01 11:22:14.599 -06:00 [DBG] Connection id "0HMQAD2DL487N" started.
+2023-05-01 11:22:14.603 -06:00 [DBG] Connection id "0HMQAD2DL487O" accepted.
+2023-05-01 11:22:14.603 -06:00 [DBG] Connection id "0HMQAD2DL487O" started.
+2023-05-01 11:22:14.620 -06:00 [DBG] Connection id "0HMQAD2DL487O" received FIN.
+2023-05-01 11:22:14.620 -06:00 [DBG] Connection id "0HMQAD2DL487N" received FIN.
+2023-05-01 11:22:14.647 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:22:14.647 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.<FillHandshakeBufferAsync>g__InternalFillHandshakeBufferAsync|189_0[TIOAdapter](TIOAdapter adap, ValueTask`1 task, Int32 minSize)
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:22:14.684 -06:00 [DBG] Connection id "0HMQAD2DL487N" stopped.
+2023-05-01 11:22:14.684 -06:00 [DBG] Connection id "0HMQAD2DL487O" stopped.
+2023-05-01 11:22:14.686 -06:00 [DBG] Connection id "0HMQAD2DL487N" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:22:14.686 -06:00 [DBG] Connection id "0HMQAD2DL487O" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:22:14.881 -06:00 [DBG] Connection id "0HMQAD2DL487P" accepted.
+2023-05-01 11:22:14.882 -06:00 [DBG] Connection id "0HMQAD2DL487P" started.
+2023-05-01 11:22:14.915 -06:00 [DBG] Connection 0HMQAD2DL487P established using the following protocol: "Tls13"
+2023-05-01 11:22:14.960 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7006/ - -
+2023-05-01 11:22:14.987 -06:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-01 11:22:15.009 -06:00 [DBG] 1 candidate(s) found for the request path '/'
+2023-05-01 11:22:15.009 -06:00 [DBG] Request matched endpoint 'HTTP: GET /'
+2023-05-01 11:22:15.011 -06:00 [INF] Executing endpoint 'HTTP: GET /'
+2023-05-01 11:22:15.027 -06:00 [INF] Executed endpoint 'HTTP: GET /'
+2023-05-01 11:22:15.031 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7006/ - - - 200 - text/plain;+charset=utf-8 72.6622ms
+2023-05-01 11:22:23.319 -06:00 [DBG] Connection id "0HMQAD2DL487Q" accepted.
+2023-05-01 11:22:23.319 -06:00 [DBG] Connection id "0HMQAD2DL487Q" started.
+2023-05-01 11:22:23.322 -06:00 [DBG] Connection 0HMQAD2DL487Q established using the following protocol: "Tls13"
+2023-05-01 11:22:23.323 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:22:23.323 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:22:23.323 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:22:23.324 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:22:23.324 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:22:23.324 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:22:23.325 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 1.8721ms
+2023-05-01 11:22:23.330 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 527
+2023-05-01 11:22:23.330 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:22:23.332 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:22:23.332 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:22:23.332 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:22:23.332 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:22:23.332 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:22:23.344 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:22:23.344 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:22:23.344 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:22:23.345 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:22:23.345 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:22:23.345 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:22:23.345 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:22:23.345 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:22:23.353 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:22:23.354 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:22:23.355 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:22:23.357 -06:00 [DBG] Connection id "0HMQAD2DL487Q", Request id "0HMQAD2DL487Q:00000003": started reading request body.
+2023-05-01 11:22:23.358 -06:00 [DBG] Connection id "0HMQAD2DL487Q", Request id "0HMQAD2DL487Q:00000003": done reading request body.
+2023-05-01 11:22:23.360 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:22:23.360 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:22:23.360 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:22:23.360 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:22:23.366 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:22:23.438 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:22:23.439 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:22:23.439 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:22:23.439 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:22:23.439 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:22:23.439 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:22:23.457 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 109.1039ms
+2023-05-01 11:22:23.457 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:22:23.457 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 527 - 200 - application/json;+charset=utf-8 127.6206ms
+2023-05-01 11:23:28.252 -06:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-05-01 11:23:28.315 -06:00 [DBG] Hosting starting
+2023-05-01 11:23:28.412 -06:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 60F08CCC9EC3BB7BE4116D60B731B8B8FE28FC1B)
+2023-05-01 11:23:28.437 -06:00 [INF] Now listening on: https://localhost:7006
+2023-05-01 11:23:28.437 -06:00 [INF] Now listening on: http://localhost:5276
+2023-05-01 11:23:28.437 -06:00 [DBG] Loaded hosting startup assembly Sorting
+2023-05-01 11:23:28.437 -06:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2023-05-01 11:23:28.437 -06:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2023-05-01 11:23:28.438 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-05-01 11:23:28.438 -06:00 [INF] Hosting environment: Development
+2023-05-01 11:23:28.438 -06:00 [INF] Content root path: C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\Sorting\
+2023-05-01 11:23:28.438 -06:00 [DBG] Hosting started
+2023-05-01 11:23:28.784 -06:00 [DBG] Connection id "0HMQAD33OKGVO" received FIN.
+2023-05-01 11:23:28.790 -06:00 [DBG] Connection id "0HMQAD33OKGVO" accepted.
+2023-05-01 11:23:28.791 -06:00 [DBG] Connection id "0HMQAD33OKGVO" started.
+2023-05-01 11:23:28.803 -06:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException:  Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveBlobAsync[TIOAdapter](TIOAdapter adapter)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](TIOAdapter adapter, Boolean receiveFirst, Byte[] reAuthenticationData, Boolean isApm)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2023-05-01 11:23:28.831 -06:00 [DBG] Connection id "0HMQAD33OKGVO" stopped.
+2023-05-01 11:23:28.834 -06:00 [DBG] Connection id "0HMQAD33OKGVO" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-05-01 11:23:29.023 -06:00 [DBG] Connection id "0HMQAD33OKGVP" accepted.
+2023-05-01 11:23:29.023 -06:00 [DBG] Connection id "0HMQAD33OKGVP" started.
+2023-05-01 11:23:29.045 -06:00 [DBG] Connection 0HMQAD33OKGVP established using the following protocol: "Tls13"
+2023-05-01 11:23:29.085 -06:00 [INF] Request starting HTTP/2 GET https://localhost:7006/ - -
+2023-05-01 11:23:29.114 -06:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-05-01 11:23:29.133 -06:00 [DBG] 1 candidate(s) found for the request path '/'
+2023-05-01 11:23:29.134 -06:00 [DBG] Request matched endpoint 'HTTP: GET /'
+2023-05-01 11:23:29.135 -06:00 [INF] Executing endpoint 'HTTP: GET /'
+2023-05-01 11:23:29.152 -06:00 [INF] Executed endpoint 'HTTP: GET /'
+2023-05-01 11:23:29.157 -06:00 [INF] Request finished HTTP/2 GET https://localhost:7006/ - - - 200 - text/plain;+charset=utf-8 74.2986ms
+2023-05-01 11:23:31.569 -06:00 [DBG] Connection id "0HMQAD33OKGVQ" accepted.
+2023-05-01 11:23:31.569 -06:00 [DBG] Connection id "0HMQAD33OKGVQ" started.
+2023-05-01 11:23:31.577 -06:00 [DBG] Connection 0HMQAD33OKGVQ established using the following protocol: "Tls13"
+2023-05-01 11:23:31.579 -06:00 [INF] Request starting HTTP/2 OPTIONS https://localhost:7006/api/sort/ - -
+2023-05-01 11:23:31.579 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:23:31.579 -06:00 [DBG] Request matched endpoint '405 HTTP Method Not Supported'
+2023-05-01 11:23:31.579 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:23:31.579 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:23:31.580 -06:00 [DBG] The request is a preflight request.
+2023-05-01 11:23:31.580 -06:00 [INF] Request finished HTTP/2 OPTIONS https://localhost:7006/api/sort/ - - - 204 - - 1.5874ms
+2023-05-01 11:23:31.585 -06:00 [INF] Request starting HTTP/2 POST https://localhost:7006/api/sort/ application/json 528
+2023-05-01 11:23:31.585 -06:00 [DBG] 1 candidate(s) found for the request path '/api/sort/'
+2023-05-01 11:23:31.587 -06:00 [DBG] Endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)' with route pattern 'api/sort' is valid for the request path '/api/sort/'
+2023-05-01 11:23:31.587 -06:00 [DBG] Request matched endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:23:31.587 -06:00 [DBG] The request has an origin header: 'http://localhost:3000'.
+2023-05-01 11:23:31.587 -06:00 [INF] CORS policy execution successful.
+2023-05-01 11:23:31.587 -06:00 [INF] Executing endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:23:31.599 -06:00 [INF] Route matched with {action = "SortValues", controller = "OmnisortAPI"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult`1[Sorting.Models.SortedValues] SortValues(Sorting.Models.SortValues) on controller Sorting.Controllers.OmnisortAPIController (Sorting).
+2023-05-01 11:23:31.600 -06:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-05-01 11:23:31.600 -06:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-05-01 11:23:31.600 -06:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-05-01 11:23:31.600 -06:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-05-01 11:23:31.600 -06:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-05-01 11:23:31.600 -06:00 [DBG] Executing controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:23:31.601 -06:00 [DBG] Executed controller factory for controller Sorting.Controllers.OmnisortAPIController (Sorting)
+2023-05-01 11:23:31.608 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:23:31.609 -06:00 [DBG] Attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues' using the name '' in request data ...
+2023-05-01 11:23:31.609 -06:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-05-01 11:23:31.612 -06:00 [DBG] Connection id "0HMQAD33OKGVQ", Request id "0HMQAD33OKGVQ:00000003": started reading request body.
+2023-05-01 11:23:31.612 -06:00 [DBG] Connection id "0HMQAD33OKGVQ", Request id "0HMQAD33OKGVQ:00000003": done reading request body.
+2023-05-01 11:23:31.615 -06:00 [DBG] JSON input formatter succeeded, deserializing to type 'Sorting.Models.SortValues'
+2023-05-01 11:23:31.615 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:23:31.615 -06:00 [DBG] Done attempting to bind parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:23:31.615 -06:00 [DBG] Attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues' ...
+2023-05-01 11:23:31.622 -06:00 [DBG] Done attempting to validate the bound parameter 'toSortValues' of type 'Sorting.Models.SortValues'.
+2023-05-01 11:23:31.689 -06:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-05-01 11:23:31.690 -06:00 [DBG] No information found on request to perform content negotiation.
+2023-05-01 11:23:31.690 -06:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-05-01 11:23:31.690 -06:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-05-01 11:23:31.691 -06:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-05-01 11:23:31.691 -06:00 [INF] Executing ObjectResult, writing value of type 'Sorting.Models.SortedValues'.
+2023-05-01 11:23:31.708 -06:00 [INF] Executed action Sorting.Controllers.OmnisortAPIController.SortValues (Sorting) in 105.0347ms
+2023-05-01 11:23:31.708 -06:00 [INF] Executed endpoint 'Sorting.Controllers.OmnisortAPIController.SortValues (Sorting)'
+2023-05-01 11:23:31.708 -06:00 [INF] Request finished HTTP/2 POST https://localhost:7006/api/sort/ application/json 528 - 200 - application/json;+charset=utf-8 123.7345ms
