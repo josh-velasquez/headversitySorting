@@ -1,5 +1,9 @@
-html,
-body > div {
+body > #root > div {
+  height: 180vh;
+  background-color: #1d3557 !important;
+}
+
+div.app {
   height: 100%;
 }
 
@@ -9,4 +13,9 @@ body > div {
 
 .segment-content {
   background-color: #a8dadc !important;
+}
+
+.input-styling {
+  margin-bottom: 5px !important;
+  background-color: #eff6e0 !important;
 }

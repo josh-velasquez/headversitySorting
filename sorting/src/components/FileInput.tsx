@@ -10,9 +10,9 @@ interface FileInformation {
 }
 
 const FileInput: React.FC<FileInformation> = ({
+  file,
   onUploadFile,
   onResetFile,
-  file,
 }) => {
   return (
     <Container>
@@ -29,7 +29,13 @@ const FileInput: React.FC<FileInformation> = ({
           </Button.Content>
           <Button.Content hidden>Upload file</Button.Content>
         </Button>
-        <input type="file" id="file" hidden onChange={onUploadFile} />
+        <input
+          type="file"
+          id="file"
+          hidden
+          accept=".txt"
+          onChange={onUploadFile}
+        />
         <Container textAlign="right">
           <Button as="div" labelPosition="left">
             <Label style={{ width: "auto" }} pointing="right" as="a" basic>

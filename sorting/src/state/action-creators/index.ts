@@ -21,11 +21,19 @@ export const requestApi = (
         sortKeyword: sortKeyword,
         sortType: sortType?.replace(" ", ""),
       });
+      const status = data.sortingStatus;
       const results = data.payload;
-      dispatch({
-        type: ActionType.REQUEST_API_SUCCESS,
-        payload: results,
-      });
+      if (status === 0) {
+        dispatch({
+          type: ActionType.REQUEST_API_SUCCESS,
+          payload: results,
+        });
+      } else {
+        dispatch({
+          type: ActionType.REQUEST_API_ERROR,
+          payload: results,
+        });
+      }
     } catch (error: any) {
       dispatch({
         type: ActionType.REQUEST_API_ERROR,
@@ -49,17 +57,25 @@ export const requestApiFileUpload = (
       const formData = new FormData();
       formData.append("formFile", file);
       formData.append("sortDirection", sortDirection);
-      formData.append("sortKeyword", sortKeyword?.replace(" ", "") ?? "");
-      formData.append("sortType", sortType ?? "");
+      formData.append("sortKeyword", sortKeyword ?? "");
+      formData.append("sortType", sortType?.replace(" ", "") ?? "");
       const { data } = await axios.post(
         `${config.serverBaseUrl}/api/sort/file`,
         formData
       );
+      const status = data.sortingStatus;
       const results = data.payload;
-      dispatch({
-        type: ActionType.REQUEST_API_SUCCESS,
-        payload: results,
-      });
+      if (status === 0) {
+        dispatch({
+          type: ActionType.REQUEST_API_SUCCESS,
+          payload: results,
+        });
+      } else {
+        dispatch({
+          type: ActionType.REQUEST_API_ERROR,
+          payload: results,
+        });
+      }
     } catch (error: any) {
       dispatch({ type: ActionType.REQUEST_API_ERROR, payload: error.message });
     }

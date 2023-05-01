@@ -10,12 +10,7 @@ import { store } from "../state";
 const App = () => {
   return (
     <Provider store={store}>
-      <div
-        style={{
-          backgroundColor: "#1d3557",
-          height: 2000,
-        }}
-      >
+      <div>
         <BrowserRouter>
           <NavBar />
           <Routes>

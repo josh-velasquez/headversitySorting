@@ -1,36 +1,41 @@
 import { Button, Form, Icon, TextArea } from "semantic-ui-react";
 
 interface ResultsPayload {
-  disableDownload: boolean;
-  onUpdateResults: () => string;
+  disableButton: boolean;
+  sortedData: string;
   onDownloadResults: () => void;
   onCopy: () => void;
 }
 
 const Results: React.FC<ResultsPayload> = ({
-  disableDownload,
-  onUpdateResults,
+  disableButton,
+  sortedData,
   onDownloadResults,
   onCopy,
 }) => {
   return (
     <Form>
       <TextArea
+        className="input-styling"
         rows={20}
-        value={onUpdateResults()}
+        value={sortedData ?? "Data"}
         placeholder="Results..."
-        style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
       />
       <Button
         floated="right"
         color="orange"
-        disabled={disableDownload}
+        disabled={disableButton}
         onClick={onDownloadResults}
       >
         <Icon name="download" />
         Download Results
       </Button>
-      <Button floated="right" color="pink" onClick={onCopy}>
+      <Button
+        floated="right"
+        color="pink"
+        onClick={onCopy}
+        disabled={disableButton}
+      >
         <Icon name="copy" />
         Copy Results
       </Button>

@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace Sorting.Models
+namespace Sorting.Enums
 {
-    public enum SortType
+    public enum SortingType
     {
         Alphabet,
         Number,

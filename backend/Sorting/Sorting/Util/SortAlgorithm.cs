@@ -1,13 +1,40 @@
 ﻿using Newtonsoft.Json.Linq;
+using Sorting.Enums;
 using Sorting.Models;
 
 namespace Sorting.Util
 {
-    public static class SortingAlgorithms
+    public static class SortAlgorithm
     {
         private static readonly char[] delimeters = new char[] { ',', '[', ']' };
 
-        public static string[] AlphabetSort(string values, SortDirection sortDirection)
+        public static string Sort(string sortStrings, SortDirection sortDirection, string sortKeyword, SortingType sortType)
+        {
+            switch (sortType)
+            {
+                case SortingType.Alphabet:
+                    string[] alphabetVals = AlphabetSort(sortStrings, sortDirection);
+                    return Converters.ConvertToString(alphabetVals);
+
+                case SortingType.Number:
+                    string[] numberVals = NumberSort(sortStrings, sortDirection);
+                    return Converters.ConvertToString(numberVals);
+
+                case SortingType.Grouping:
+                    IGrouping<string, string>[] groupVals = GroupStringSort(sortStrings, sortDirection);
+                    return Converters.ConvertToString(groupVals);
+
+                case SortingType.CustomKeyword:
+                    JArray sortObjects = JArray.Parse(sortStrings);
+                    JToken[] customResult = ObjectSortByKeyword(sortObjects, sortKeyword, sortDirection);
+                    return Converters.ConvertToString(customResult);
+
+                default:
+                    return string.Empty;
+            }
+        }
+
+        private static string[] AlphabetSort(string values, SortDirection sortDirection)
         {
             IEnumerable<string> results = values
                 .Split(delimeters)
@@ -30,7 +57,7 @@ namespace Sorting.Util
             return results.ToArray();
         }
 
-        public static IGrouping<string, string>[] GroupStringSort(string values, SortDirection sortDirection)
+        private static IGrouping<string, string>[] GroupStringSort(string values, SortDirection sortDirection)
         {
             IEnumerable<string> results = values
                 .Split(delimeters)
@@ -53,7 +80,7 @@ namespace Sorting.Util
             return results.GroupBy(x => x).ToArray();
         }
 
-        public static string[] NumberSort(string values, SortDirection sortDirection)
+        private static string[] NumberSort(string values, SortDirection sortDirection)
         {
             IEnumerable<string> results = values
                 .Split(delimeters)
@@ -76,66 +103,34 @@ namespace Sorting.Util
             return results.ToArray();
         }
 
-        public static JToken[] ObjectSortByKeyword(JArray values, string sortKeyword, SortDirection sortDirection)
+        private static JToken[] ObjectSortByKeyword(JArray values, string sortKeyword, SortDirection sortDirection)
         {
             switch (sortDirection)
             {
                 case SortDirection.Ascending:
-                    return new JArray(values.OrderBy(obj => obj[sortKeyword])).ToArray();
+                    return new JArray(values.OrderBy(x =>
+                    {
+                        if (float.TryParse((string?)x[sortKeyword], out float intVal))
+                        {
+                            return float.Parse(Convert.ToString(intVal));
+                        }
+                        return x[sortKeyword];
+                    })).ToArray();
 
                 case SortDirection.Descending:
-                    return new JArray(values.OrderByDescending(obj => obj[sortKeyword])).ToArray();
+                    return new JArray(values.OrderByDescending(x =>
+                    {
+                        if (float.TryParse((string?)x[sortKeyword], out float intVal))
+                        {
+                            return float.Parse(Convert.ToString(intVal));
+                        }
+                        return x[sortKeyword];
+                    })).ToArray();
 
                 default:
                     break;
             }
             return new JArray(values.OrderBy(obj => obj[sortKeyword])).ToArray();
         }
-
-        #region QuickSort
-
-        public static int[] QuickSort(int[] values)
-        {
-            QuickSortHelper(values, 0, values.Length - 1);
-            return values;
-        }
-
-        private static void Swap(int[] arr, int i, int j)
-        {
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-        }
-
-        private static int Partition(int[] arr, int low, int high)
-        {
-            int pivot = arr[high];
-
-            int i = (low - 1);
-
-            for (int j = low; j <= high; j++)
-            {
-                if (arr[j] < pivot)
-                {
-                    i++;
-                    Swap(arr, i, j);
-                }
-            }
-            Swap(arr, i + 1, high);
-            return (i + 1);
-        }
-
-        private static void QuickSortHelper(int[] arr, int low, int high)
-        {
-            if (low < high)
-            {
-                int partitionIndex = Partition(arr, low, high);
-
-                QuickSortHelper(arr, low, partitionIndex - 1);
-                QuickSortHelper(arr, partitionIndex + 1, high);
-            }
-        }
-
-        #endregion QuickSort
     }
 }

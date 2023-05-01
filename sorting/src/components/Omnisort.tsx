@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import {
   TextArea,
   Container,
@@ -32,13 +32,14 @@ enum SortDirections {
 }
 
 const Omnisort: React.FC = () => {
-  const [values, setValues] = useState("");
+  const [sortStrings, setSortStrings] = useState("");
   const [sortType, setSortType] = useState<string>(Keywords.Number);
   const [sortKeyword, setSortKeyword] = useState("");
   const [sortDirection, setSortDirection] = useState<string>(
     SortDirections.Ascending
   );
-  const [disableDownload, setDisabledDownload] = useState<boolean>(true);
+  const [sortedData, setSortedData] = useState<string>("Results...");
+  const [disableButton, setDisableButton] = useState<boolean>(true);
   const [file, setFile] = useState<File>();
   const { data, error, loading } = useTypedSelector((state) => state.results);
   const { requestApi } = useActions();
@@ -52,7 +53,6 @@ const Omnisort: React.FC = () => {
       value: index,
     })
   );
-
   const sortDirections: string[] = Object.values(SortDirections);
   const sortDirectionOptions: DropdownItemProps[] = _.map(
     sortDirections,
@@ -63,14 +63,13 @@ const Omnisort: React.FC = () => {
     })
   );
 
-  // TODO: Auto detect the type of the array to sort easier
-
   const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    onResetFile();
     if (file !== undefined) {
       requestApiFileUpload(file, sortDirection, sortKeyword ?? "", sortType);
     } else {
-      requestApi(values, sortDirection, sortKeyword ?? "", sortType);
+      requestApi(sortStrings, sortDirection, sortKeyword ?? "", sortType);
     }
   };
 
@@ -85,36 +84,18 @@ const Omnisort: React.FC = () => {
     setFile(undefined);
   };
 
-  const onUpdateResults = (): string => {
-    if (error) {
-      return "Oops something went wrong 🙁...: ";
-    } else if (loading) {
-      return "Fetching sorting results...";
-    } else if (!error && !loading && data) {
-      if (data.length !== 0) {
-        // setDisabledDownload(false);
-      }
-      // return JSON.parse(JSON.stringify(data));
-      return JSON.stringify(data);
-    } else {
-      return "Your results here...";
-    }
-  };
-
   const onCopy = () => {
     navigator.clipboard.writeText(JSON.parse(JSON.stringify(data)));
   };
 
   const onDownloadResults = () => {
-    // TODO: enable this if a file is ready to download
-    // if file download then high
     const strData = JSON.parse(JSON.stringify(data));
     const blob = new Blob([strData], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
+    link.setAttribute("download", "omnisortResults.txt");
     link.click();
-    console.warn("Download file");
   };
 
   const onCustomKeyword = (event: ChangeEvent<HTMLInputElement>) => {
@@ -145,19 +126,38 @@ const Omnisort: React.FC = () => {
     }
   };
 
+  const updateResults = () => {
+    if (error) {
+      setDisableButton(true);
+      setSortedData("Oops something went wrong 🙁... \n Error: " + error);
+    } else if (loading) {
+      setDisableButton(true);
+      setSortedData("Fetching sorting results...");
+    } else if (!error && !loading && data) {
+      if (data.length !== 0) {
+        setDisableButton(false);
+      }
+      setSortedData(JSON.parse(JSON.stringify(data.toString())));
+    }
+  };
+
+  useEffect(() => {
+    updateResults();
+  }, [error, loading, data]);
+
   return (
     <Container>
       <Intro />
       <Segment raised clearing className="segment-container" inverted>
-        <Form onSubmit={onSubmit} style={{ padding: "5px" }}>
+        <Form onSubmit={onSubmit}>
           <Grid relaxed="very">
             <Grid.Row columns={2}>
               <Grid.Column>
                 <TextArea
-                  value={values}
-                  onChange={(e) => setValues(e.target.value)}
+                  className="input-styling"
+                  value={sortStrings}
+                  onChange={(e) => setSortStrings(e.target.value)}
                   placeholder="Enter your data here..."
-                  style={{ marginBottom: "10px", backgroundColor: "#eff6e0" }}
                 />
               </Grid.Column>
               <Grid.Row>
@@ -180,7 +180,7 @@ const Omnisort: React.FC = () => {
               <Grid.Column>
                 <Dropdown
                   button
-                  className="icon"
+                  className="icon input-styling"
                   floating
                   selection
                   selectOnBlur={true}
@@ -189,7 +189,6 @@ const Omnisort: React.FC = () => {
                   defaultValue={0}
                   options={keywordOptions}
                   onChange={onSortBySelect}
-                  style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
                 />
                 {sortType === "Custom Keyword" && (
                   <Input
@@ -199,14 +198,13 @@ const Omnisort: React.FC = () => {
                 )}
                 <Dropdown
                   button
-                  className="icon"
+                  className="icon input-styling"
                   floating
                   selection
                   labeled
                   selectOnBlur={true}
                   defaultValue={0}
                   onChange={onSortOrderSelect}
-                  style={{ marginBottom: "5px", backgroundColor: "#f1faee" }}
                   icon="sort"
                   options={sortDirectionOptions}
                 />
@@ -221,8 +219,8 @@ const Omnisort: React.FC = () => {
         </Form>
         <Divider />
         <Results
-          disableDownload={disableDownload}
-          onUpdateResults={onUpdateResults}
+          sortedData={sortedData}
+          disableButton={disableButton}
           onDownloadResults={onDownloadResults}
           onCopy={onCopy}
         />
