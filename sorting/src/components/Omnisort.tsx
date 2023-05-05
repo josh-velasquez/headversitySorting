@@ -126,7 +126,7 @@ const Omnisort: React.FC = () => {
     }
   };
 
-  const updateResults = () => {
+  useEffect(() => {
     if (error) {
       setDisableButton(true);
       setSortedData("Oops something went wrong 🙁... \n Error: " + error);
@@ -139,10 +139,6 @@ const Omnisort: React.FC = () => {
       }
       setSortedData(JSON.parse(JSON.stringify(data.toString())));
     }
-  };
-
-  useEffect(() => {
-    updateResults();
   }, [error, loading, data]);
 
   return (

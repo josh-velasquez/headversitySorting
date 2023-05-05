@@ -18,6 +18,7 @@ const Results: React.FC<ResultsPayload> = ({
       <TextArea
         className="input-styling"
         rows={20}
+        disabled={true}
         value={sortedData ?? "Data"}
         placeholder="Results..."
       />

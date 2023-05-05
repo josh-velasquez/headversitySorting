@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SortingTests
-build_property.ProjectDir = C:\Users\Nemesis\Repositories\headversitySorting\backend\Sorting\SortingTests\
+build_property.ProjectDir = /Users/joshuavelasquez/Desktop/GitHub/headversitySorting/backend/Sorting/SortingTests/
